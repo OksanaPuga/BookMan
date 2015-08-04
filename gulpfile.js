@@ -51,6 +51,8 @@ gulp.task('fonts', function () {
 gulp.task('watch', function() {
     gulp.watch('dev/scripts/*.js', ['scripts']);
     gulp.watch('dev/styles/*.scss', ['styles']);
+    gulp.watch('dev/*.html', ['html']);
+    gulp.watch('dev/images/*.*', ['images']);
 });
 
 gulp.task('webserver', function() {

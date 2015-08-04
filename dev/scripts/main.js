@@ -1,2 +1,1 @@
-console.log('first script');
-console.log('second script');
+console.log('js works');

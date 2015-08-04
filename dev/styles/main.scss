@@ -1,3 +1,387 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+$container-width: 1020px;
+
+$color0: #2B3740;
+$color1: #626F79;
+$color2: #C0C0C0;
+$color3: #FBFAF9;
+$color4: #FFFFFF;
+$colorA: #2EAC69;
+$colorB: #F58410;
+
+$font1: 'Roboto Slab';
+$font2: 'Oswald';
+$font3: 'Raleway';
+
+$header-height: 70px;
+$header-color: white;
+
+$sidebar-background: gray;
+$sidebar-width: 240px;
+
+$book-search-height: 125px;
+$book-filter-height: 230px;
+$statistics-section-height: 150px;
+
+$section-margin: 30px;
+
+$book-instance-margin: 20px;
+$book-instance-width: ($container-width - $sidebar-width - $section-margin - $book-instance-margin * 3) / 4;
+$book-instance-height: 230px;
+$book-transition-time: .3s;
+
+$buttons-transition-time: .2s;
+
+
+* {
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+}
+
+.clearfix:after {
+  content:"";
+  display:table;
+  clear:both;
+}
+
+.container {
+    width: $container-width;
+    margin: auto;
+}
+
+.btn {
+    font-family: $font1;
+}
+
+html {
+    height: 100%;
+}
+
 body {
-    background: lightgray;
+    background: $color3;
+    font-family: $font1;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    .content {
+        width: 100%;
+        position: absolute;
+        top: $header-height;
+        bottom: 0;
+        .container {
+            margin-top: -$section-margin;
+            height: 100%;
+        }
+    }
+}
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    background: $color0;
+    height: $header-height;
+    color: $color3;
+    .logo-and-name {
+        float: left;
+        img {
+            float: left;
+            height: $header-height - 20px;
+            width: $header-height - 10px;
+            margin-top: 10px;
+        }
+        p {
+            float: left;
+            margin: 10px 0 0 10px;
+            font-size: 34px;
+            font-weight: bold;
+        }
+    }
+    .logo-and-name:hover {
+        cursor: pointer;
+    }
+    .top-nav {
+        float: right;
+        ul {
+            margin: 23px 40px 0 0;
+        }
+        li {
+            float: left;
+            list-style: none;
+            border-right: 1px solid $color3;
+            padding: 2px 10px 5px;
+            transition: $buttons-transition-time;
+            a {
+                color: $color3;
+                margin: 0;
+                text-decoration: initial;
+            }
+        }
+        li:hover {
+            background: $color3;
+            a {
+                color: $color0;
+            }
+        }
+        li:last-child {
+            border-right: none;
+        }
+    }
+    .logged-user {
+        float: right;
+        height: 40px;
+        margin-top: 15px;
+        padding: 5px 12px;
+        border: 2px solid $color3;
+        font-size: 18px;
+        border-radius: 2px;
+        transition: $buttons-transition-time;
+    }
+    .logged-user:hover {
+        background: $color3;
+        color: $color0;
+        cursor: pointer;
+    }
+}
+
+p .accent {
+    font-family: $font2;
+    font-weight: normal;
+    background: $colorB;
+    padding: 0 5px;
+}
+
+sidebar {
+    position: fixed;
+    clear: both;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin-top: $header-height;
+    background: $color1;
+    width: $sidebar-width;
+    min-height: $book-search-height + $book-filter-height + $statistics-section-height;
+    color: $color4;
+    font-family: $font3;
+    padding: 0 30px;
+    .book-search {
+        padding-top: 28px;
+        height: $book-search-height;
+        border-bottom: 1px solid $color3;
+        input {
+            margin-top: 12px;
+            height: 30px;
+        }
+    }
+    .book-filter {
+        height: $book-filter-height;
+        padding-top: 30px;
+        border-bottom: 1px solid $color3;
+        p {
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            padding: 1px 0 1px 15px;
+            font-size: 15px;
+            border-radius: 2px;
+            transition: $buttons-transition-time;
+        }
+        label:hover {
+            cursor: pointer;
+            background: $color3;
+            color: $color1;
+        }
+        div {
+            margin-top: 20px;
+            border: 1px solid $color3;
+            color: $color3;
+            padding: 6px 11px;
+            background: none;
+            font-family: $font1;
+            font-weight: lighter;
+            text-align: center;
+            border-radius: 2px;
+            transition: $buttons-transition-time;
+        }
+        div:hover {
+            cursor: pointer;
+            background: $color3;
+            color: $color1;
+            font-weight: normal;
+        }
+    }
+    .statistics-section {
+        height: $statistics-section-height;
+        padding-top: 30px;
+        text-align: center;
+        div {
+            border: 2px solid $color3;
+            font-weight: normal;
+            font-size: 18px;
+            background: $colorA;
+            border-radius: 2px;
+            text-align: center;
+            padding: 10px;
+            margin-top: 18px;
+            transition: $buttons-transition-time;
+        }
+        div:hover {
+            background: $colorB;
+            cursor: pointer;
+        }
+    }
+}
+
+section.main-content {
+    position: absolute;
+    min-height: $book-search-height + $book-filter-height + $statistics-section-height - $section-margin;
+    margin-top: $section-margin;
+    margin-left: $section-margin + $sidebar-width;
+    margin-bottom: $section-margin;
+    top: 0;
+    width: $container-width - $sidebar-width - $section-margin;
+    
+    .new-book-btn {
+        float: left;
+        width: $book-instance-width;
+        height: $book-instance-height;
+        margin: 0 $book-instance-margin $book-instance-margin 0;
+        overflow: hidden;
+        .front {
+            width: $book-instance-width;
+            height: $book-instance-height;
+            position: relative;
+            top: -$book-instance-height;
+            transition: $book-transition-time;
+            transition-delay: .2s;
+            cursor: pointer;
+            border: 3px dashed $colorA;
+            position: relative;
+            top: -$book-instance-height;
+            transition: $book-transition-time;
+            transition-delay: .1s;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 5px;
+            background: $color3;
+            img {
+                margin-top: 65px;
+                width: 40px;
+                height: 40px;
+            }
+            p {
+                font-size: 23px;
+                font-weight: bold;
+                margin-top: 5px;
+                color: $colorA;
+            }
+        }
+        .front:hover {
+            cursor: pointer;
+        }
+        .back {
+            width: $book-instance-width;
+            height: $book-instance-height;
+            border: 3px dashed $colorA;
+            border-radius: 5px;
+            padding-top: 30px;
+            background: $color4;
+            .search-book-btn, .manually-btn {
+                color: $color3;
+                border-radius: 2px;
+                font-weight: bolder;
+                font-size: 18px;
+                background: $colorA;
+                border-radius: 2px;
+                text-align: center;
+                padding: 15px;
+                margin: 15px 10px 10px;
+                transition: $buttons-transition-time;
+            }
+            .search-book-btn:hover, .manually-btn:hover {
+                background: $colorB;
+                cursor: pointer;
+            }
+        }
+    }
+    .new-book-btn:hover {
+        .front {
+            transform: translateX(-$book-instance-width);
+        }
+    }
+    
+    .book-instance {
+        border: 2px solid $color1;
+        float: left;
+        width: $book-instance-width;
+        height: $book-instance-height;
+        margin: 0 $book-instance-margin $book-instance-margin 0;
+        overflow: hidden;
+        transition: $book-transition-time;
+        transition-delay: .2s;
+        .front {
+            background: $colorA;
+            width: $book-instance-width;
+            height: $book-instance-height;
+            position: relative;
+            top: -$book-instance-height;
+            transition: $book-transition-time;
+            transition-delay: .2s;
+            cursor: pointer;
+            img {
+                width: $book-instance-width;
+                height: $book-instance-height;
+            }
+        }
+        .back {
+            background: $color4;
+            width: $book-instance-width;
+            height: $book-instance-height;
+            text-align: center;
+            color: $color0;
+            padding: 25px 25px;
+            .book-author {
+                font-family: $font2;
+                font-size: 18px;
+            }
+            .book-name {
+                font-family: $font2;
+                font-weight: bold;
+                font-size: 20px;
+                padding-bottom: 16px; 
+            }
+            .review {
+                padding-top: 5px;
+                border-top: 2px solid $colorB;
+                font-size: 14px;
+            }
+            .quotes {
+                font-size: 14px;
+            }
+            .notes {
+                font-size: 14px;
+                padding-bottom: 5px;
+                border-bottom: 1px solid $colorB;
+            }
+            .rate {
+                margin-top: 15px;
+            }
+        }
+    }
+    .book-instance:nth-child(4n + 0) {
+        margin-right: 0;
+    }
+    .book-instance:hover {
+        cursor: pointer;
+        .front {
+             transform: translateX(-$book-instance-width);
+        }
+    }
 }
