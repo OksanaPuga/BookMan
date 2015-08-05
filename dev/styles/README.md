@@ -12,15 +12,15 @@ To manage our work we can separate styles to *2 types*:
 button, .btn { // common rules for all buttons
     border: none;
     border-radius: 2px;
+}
     
-    .important { // all big buttons
-        padding: 15px;
-        color: white;
-        
-        .ok-btn { // specific button 'Ok'
-            background: green;
-        }
-    }
+btn.important { // all big buttons
+    padding: 15px;
+    color: white;
+}
+
+btn.ok-btn { // specific button 'Ok'
+    background: green;
 }
 ```
 **Specific to page styles** (like margins, gaps between elements, some small style fixes) should be stored in separate files for each page (`main-page-style.scss`).
