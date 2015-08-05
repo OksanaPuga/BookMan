@@ -25,8 +25,6 @@ btn.ok-btn { // specific button 'Ok'
 ```
 **Specific to page styles** (like margins, gaps between elements, some small style fixes) should be stored in separate files for each page (`main-page-style.scss`).
 
-Also we can make *one file with sass-variables* to store colors, fonts and some size-values (if we use them to calculate other values) in one place. This variables can be used in all other scss-files without copying.
-
 
 ###Layout of main interface elements
 According to layout, we have *3 types of pages*:

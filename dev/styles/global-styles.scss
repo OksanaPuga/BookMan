@@ -1,0 +1,218 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+$color0: #2B3740;
+$color1: #626F79;
+$color2: #C0C0C0;
+$color3: #FBFAF9;
+$color4: #FFFFFF;
+$colorA: #2EAC69;
+$colorB: #F58410;
+
+$font1: 'Roboto Slab';
+$font2: 'Oswald';
+$font3: 'Raleway';
+
+$book-transition-time: .3s;
+$buttons-transition-time: .2s;
+
+
+
+
+///////////// VERY BASIC STYLES //////////////
+
+body {
+    background: $color1;
+    font-family: $font1;
+}
+
+p {
+    margin: 0;
+}
+
+
+// text with orange background
+span.accent {
+    font-family: $font2;
+    background: $colorB;
+    padding: 0 5px;
+}
+
+
+input[type='text'] {
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    padding: 0 10px;
+}
+
+
+
+/////////////////// BUTTONS ///////////////////
+
+// all buttons
+.btn {
+    text-align: center;
+    border-radius: 5px;
+    color: $color3;
+    transition: $buttons-transition-time;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+
+// big buttons (in sidebar)
+.btn.big {
+    font-size: 18px;
+    padding: 10px;
+}
+
+
+// buttons which accept smth.
+.btn.positive {
+    background: $colorA;
+}
+.btn.positive:hover {
+    background: $colorB;
+}
+
+
+// buttons which cancel smth.
+.btn.negative {
+    background: none;
+    border: 1px solid $color3;
+    font-weight: lighter;
+}
+.btn.negative:hover {
+    background: $color3;
+    color: $color1;
+    font-weight: normal;
+}
+
+
+
+////////////// BASIC PAGE PARTS /////////////////
+
+header {
+    background: $color0;
+    color: $color3;
+    
+    .logo-and-name p {
+        font-family: $font1;
+        font-size: 34px;
+        font-weight: bold;
+        transition: $buttons-transition-time;
+    }
+    .logo-and-name:hover {
+        cursor: pointer;
+        color: $colorB;
+    }
+    .top-nav {
+        li {
+            list-style: none;
+            border-right: 1px solid $color3;
+            padding: 2px 10px 5px;
+            transition: $buttons-transition-time;
+            a {
+                color: $color3;
+                text-decoration: initial;
+            }
+        }
+        li:hover {
+            background: $color3;
+            a {
+                color: $color0;
+            }
+        }
+        li:last-child {
+            border-right: none;
+        }
+    }
+    .logged-user {
+        padding: 5px 12px;
+        border: 2px solid $color3;
+        font-size: 18px;
+        border-radius: 2px;
+    }
+    .logged-user:hover {
+        background: $color3;
+        color: $color0;
+    }
+}
+
+
+
+sidebar {
+    color: $color3;
+    padding: 40px 40px 30px 0;
+    
+    .filter {
+        label {
+            padding: 1px 0 1px 15px;
+            font-size: 15px;
+            border-radius: 2px;
+            transition: $buttons-transition-time;
+        }
+        label:hover {
+            cursor: pointer;
+            background: $color3;
+            color: $color1;
+        }
+        .btn {
+            margin-top: 15px;
+        }
+    }
+}
+
+
+
+// small instances of the books
+.book-instance {
+    transition: $book-transition-time;
+    transition-delay: .2s;
+    font-family: $font3;
+    .front {
+        background: $colorA;
+        transition: $book-transition-time;
+        transition-delay: .2s;
+        cursor: pointer;
+    }
+    .back {
+        background: $color4;
+        text-align: center;
+        color: $color0;
+        padding: 25px 25px;
+        .book-author, .book-name {
+            font-family: $font2;
+        }
+        .book-author {
+            font-size: 18px;
+        }
+        .book-name {
+            font-weight: bold;
+            font-size: 20px;
+            padding-bottom: 16px; 
+        }
+        .review {
+            padding-top: 5px;
+            border-top: 2px solid $colorB;
+            font-size: 14px;
+        }
+        .quotes {
+            font-size: 14px;
+        }
+        .notes {
+            font-size: 14px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid $colorB;
+        }
+        .rate {
+            margin-top: 15px;
+        }
+    }
+}
+.book-instance:hover {
+    cursor: pointer;
+}

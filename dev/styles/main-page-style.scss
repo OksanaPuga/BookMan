@@ -1,0 +1,95 @@
+$color3: #FBFAF9;
+$colorA: #2EAC69;
+$colorB: #F58410;
+$book-search-height: 125px;
+$statistics-section-height: 150px;
+$buttons-transition-time: .2s;
+
+
+.book-search {
+    height: $book-search-height;
+    input {
+        margin-top: 12px;
+        height: 30px;
+    }
+}
+
+
+
+// layout
+.statistics-section {
+    height: $statistics-section-height;
+    .btn {
+        margin-top: 10px;
+    }
+}
+// styles
+.statistics-section {
+    padding-top: 20px;
+    text-align: center;
+}
+
+
+
+// layout
+.new-book-btn {
+    float: left;
+    width: $book-instance-width;
+    height: $book-instance-height;
+    margin: 0 $book-instance-margin $book-instance-margin 0;
+    overflow: hidden;
+    .front, .back {
+        width: $book-instance-width;
+        height: $book-instance-height;
+    }
+    .front {
+        position: relative;
+        top: -$book-instance-height;
+    }
+}
+.new-book-btn:hover {
+    .front {
+        transform: translateX(-$book-instance-width);
+    }
+}
+// styles
+.new-book-btn {
+    .front, .back {
+        border: 3px dashed $colorA;
+        border-radius: 5px;
+    }
+    .front {
+        transition: $book-transition-time;
+        transition-delay: .2s;
+        text-align: center;
+        background: $color3;
+        img {
+            margin-top: 65px;
+            width: 40px;
+            height: 40px;
+        }
+        p {
+            font-size: 23px;
+            font-weight: bold;
+            margin-top: 5px;
+            color: $colorA;
+        }
+    }
+    .front:hover {
+        cursor: pointer;
+    }
+    .back {
+        padding-top: 30px;
+        background: $color4;
+        .search-book-btn, .manually-btn {
+            color: $color3;
+            font-size: 18px;
+            background: $colorA;
+            padding: 15px;
+            margin: 15px 10px 10px;
+        }
+        .search-book-btn:hover, .manually-btn:hover {
+            background: $colorB;
+        }
+    }
+}

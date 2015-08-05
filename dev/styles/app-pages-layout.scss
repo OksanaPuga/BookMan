@@ -1,0 +1,153 @@
+$container-width: 1020px;
+
+$header-height: 70px;
+
+$sidebar-width: 260px;
+
+$book-search-height: 125px;
+$book-filter-height: 230px;
+$statistics-section-height: 150px;
+
+$section-margin: 30px;
+
+$book-instance-margin: 20px;
+$book-instance-width: ($container-width - $sidebar-width - $section-margin - $book-instance-margin * 3) / 4;
+$book-instance-height: 230px;
+
+
+* {
+    box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container {
+    width: $container-width;
+    margin: auto;
+}
+
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+    
+.content {
+    width: 100%;
+    min-width: $container-width;
+    position: absolute;
+    top: $header-height;
+    .container {
+        margin-top: -$section-margin;
+        height: 100%;
+    }
+}
+
+
+header {
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: $header-height;
+    .logo-and-name {
+        float: left;
+        img {
+            float: left;
+            height: $header-height - 20px;
+            width: $header-height - 10px;
+            margin-top: 10px;
+        }
+        p {
+            float: left;
+            margin: 10px 0 0 10px;
+        }
+    }
+    .top-nav {
+        float: right;
+        ul {
+            margin: 23px 40px 0 0;
+        }
+        li {
+            float: left;
+        }
+    }
+    .logged-user {
+        float: right;
+        height: 40px;
+        margin-top: 15px;
+    }
+}
+
+
+sidebar {
+    position: fixed;
+    clear: both;
+    float: left;
+    top: 0;
+    bottom: 0;
+    margin-top: $header-height;
+    width: $sidebar-width;
+    min-height: $book-search-height + $book-filter-height + $statistics-section-height;
+}
+
+
+
+section.main-content {
+    position: absolute;
+    min-height: $book-search-height + $book-filter-height + $statistics-section-height - $section-margin;
+    margin-top: 40px;
+    margin-left: $section-margin + $sidebar-width;
+    margin-bottom: 30px;
+    top: 0;
+    width: $container-width - $sidebar-width - $section-margin;
+}
+
+
+
+// .filter can be reused in page with book search
+.filter {
+    height: $book-filter-height;
+    p {
+        margin-bottom: 10px;
+    }
+    label {
+        display: block;
+    }
+    div {
+        margin-top: 20px;
+    }
+}
+
+
+
+// .book-instance can be reused in page with book search
+.book-instance {
+    float: left;
+    width: $book-instance-width;
+    height: $book-instance-height;
+    margin: 0 $book-instance-margin $book-instance-margin 0;
+    overflow: hidden;
+    .front, .back, .front img {
+        width: $book-instance-width;
+        height: $book-instance-height; 
+    }
+    .front {
+        position: relative;
+        top: -$book-instance-height;
+    }
+}
+.book-instance:nth-child(4n + 0) {
+    margin-right: 0;
+}
+.book-instance:hover {
+    .front {
+         transform: translateX(-$book-instance-width);
+    }
+}
