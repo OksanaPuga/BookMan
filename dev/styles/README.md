@@ -23,7 +23,7 @@ button, .btn { // common rules for all buttons
     }
 }
 ```
-**Specific to page styles** (like margins, gaps between elements, some small style fixes) should be stored in separate files for each page (mainpage-style.scss).
+**Specific to page styles** (like margins, gaps between elements, some small style fixes) should be stored in separate files for each page (`main-page-style.scss`).
 
 Also we can make *one file with sass-variables* to store colors, fonts and some size-values (if we use them to calculate other values) in one place. This variables can be used in all other scss-files without copying.
 
@@ -56,3 +56,5 @@ We expect to have:
 - `stat-page-layout.scss`
 - `stat-page-layout-tablet.scss`
 - `stat-page-layout-mobile.scss`
+
+- Other style files for specific pages - `main-page-style.scss`, `info-page-style.scss`, `stat-page-style.scss` etc.
