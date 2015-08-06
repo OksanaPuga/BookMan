@@ -36,7 +36,14 @@ p {
 span.accent {
     font-family: $font2;
     background: $colorB;
-    padding: 0 5px;
+    color: $color3;
+    padding: 0 10px;
+}
+
+
+// important paragraphs in sidebar
+p.widget-label {
+    font-size: 18px;
 }
 
 
@@ -45,6 +52,7 @@ input[type='text'] {
     border-radius: 5px;
     width: 100%;
     padding: 0 10px;
+    background: $color3;
 }
 
 
@@ -82,7 +90,7 @@ input[type='text'] {
 // buttons which cancel smth.
 .btn.negative {
     background: none;
-    border: 1px solid $color3;
+    border: 2px solid $color3;
     font-weight: lighter;
 }
 .btn.negative:hover {
@@ -150,7 +158,8 @@ sidebar {
     
     .filter {
         label {
-            padding: 1px 0 1px 15px;
+            text-align: center;
+            padding: 1px;
             font-size: 15px;
             border-radius: 2px;
             transition: $buttons-transition-time;
@@ -158,10 +167,20 @@ sidebar {
         label:hover {
             cursor: pointer;
             background: $color3;
-            color: $color1;
+            color: $colorB;
+            font-weight: bolder;
+            input:checked + span {
+                color: darkgray;
+            }
         }
         .btn {
             margin-top: 15px;
+        }
+        input {
+            display: none;
+        }
+        input:checked + span {
+            color: darkgray;
         }
     }
 }
@@ -173,6 +192,7 @@ sidebar {
     transition: $book-transition-time;
     transition-delay: .2s;
     font-family: $font3;
+    border-radius: 4px;
     .front {
         background: $colorA;
         transition: $book-transition-time;

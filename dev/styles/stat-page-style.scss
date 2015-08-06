@@ -1,0 +1,160 @@
+$header-height: 70px;
+$container-width: 1020px;
+$color0: #2B3740;
+$color1: #626F79;
+$color2: #C0C0C0;
+$color3: #FBFAF9;
+$color4: #FFFFFF;
+$colorA: #2EAC69;
+$colorB: #F58410;
+
+$stat-info-width: 330px;
+
+
+#statistics {
+    margin: $header-height 0 30px 0;   
+    
+    // left side
+    .message-books-img {
+        float: left;
+        height: 100%;
+        width: $container-width - $stat-info-width;
+        padding-right: 60px;
+    }
+    .message {
+        color: $color3;
+        padding-bottom: 70px;
+    }
+    .result {
+        font-size: 22px;
+    }
+    .level {
+        padding-top: 10px;
+        font-size: 35px;
+        font-weight: bolder;
+    }
+    .important {
+        padding: 5px 0 1px 10px;
+        color: $color1;
+        background: $color3;
+    }
+    
+    
+    // section under message
+    .books-img {
+        border-top: 1px dashed $color3;
+        border-bottom: 1px dashed $color3;
+        padding-left: 7px;
+    }
+    .books {
+        float: left;
+        width: 300px;
+    }
+    .book {
+        position: relative;
+        box-shadow: 0 3px 0 3px $color3, 3px 3px 0 3px $color3, -3px 3px 0 3px $color3;
+        border: 1px solid $color3;
+    }
+    .book:nth-child(3n), .book:nth-child(3n + 2) {
+        background: $color1;
+    }
+    .book:nth-child(3n + 1) {
+        background: $colorA;
+    }
+    // for now it is just hardcode...
+    .book:first-child {
+        box-shadow: 0 4px 0 7px $color3;
+    }
+    .book:last-child {
+        box-shadow: 0 3px 0 3px $color3, -3px 3px 0 3px $color3, 3px 3px 0 3px $color3;
+    }
+    .book:nth-child(1) {
+        width: 97%;
+        height: 20px;
+    }
+    .book:nth-child(2) {
+        width: 91%;
+        height: 29px;
+        left: 7px;
+    }
+    .book:nth-child(3) {
+        width: 93%;
+        height: 30px;
+    }
+    .book:nth-child(4) {
+        width: 79%;
+        height: 34px;
+        left: 4px;
+    }
+    .book:nth-child(5) {
+        width: 88%;
+        height: 19px;
+        left: 7px;
+    }
+    .book:nth-child(6) {
+        width: 83%;
+        height: 40px;
+    }
+    .book:nth-child(7) {
+        width: 100%;
+        height: 30px;
+    }
+    .book:nth-child(8) {
+        width: 79%;
+        height: 34px;
+        left: 6px;
+    }
+    .book:nth-child(9) {
+        width: 88%;
+        height: 19px;
+    }
+    .book:nth-child(10) {
+        width: 83%;
+        height: 40px;
+        left: 5px;
+    }
+    .book:nth-child(11) {
+        width: 100%;
+        height: 30px;
+    }
+    img.comparison {
+        margin-top: -10px;
+        margin-bottom: -15px;
+        float: right;
+        height: 350px;
+    }
+
+
+    // right side
+    .stat-info {
+        float: right;
+        height: 100%;
+        width: $stat-info-width;
+        background: $color3;
+        color: $color0;
+        padding: 20px 30px;
+        font-family: $font3;
+        border-radius: 3px;
+        .title {
+            font-family: $font2;
+            font-size: 43px;
+            color: $color1;
+            font-weight: bold;
+            border-bottom: 3px solid $color1;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .primary {
+            margin: 15px 0 10px;
+            font-size: 20px;
+            font-weight: bolder;
+        }
+        li {
+            list-style: none;
+        }
+        .secondary {
+            margin-left: 20px;
+            
+        }
+    }
+}
