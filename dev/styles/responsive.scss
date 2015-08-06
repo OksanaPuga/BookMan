@@ -65,7 +65,7 @@
 		}
 	}
 
-	.wrap-sidebar{
+	.wrap-aside{
 		background: url(../images/pixel-opacity.png) repeat;
 	}
 
@@ -81,7 +81,7 @@
 			position: fixed;
 			z-index: 10;
 			top:50%;
-			left: $sidebar-width;
+			left: $aside-width;
 			border-radius: 0px 25px 25px 0;
 			-webkit-transition: all .3s;
 				transition: all .3s;

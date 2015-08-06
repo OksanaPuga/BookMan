@@ -56,7 +56,7 @@ gulp.task('webserver', function() {
       host: 'localhost',
       port: 8080,
       open: true,
-      fallback: 'index.html',
+      fallback: 'book-list-responsive.html',
       directoryListing: 'dist'
   }));
 });

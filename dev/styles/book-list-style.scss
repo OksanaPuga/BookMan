@@ -17,7 +17,7 @@ $font2: 'Oswald';
 $font3: 'Raleway';
 
 $header-height: 70px;
-$sidebar-width: 260px;
+$aside-width: 260px;
 
 $book-search-height: 125px;
 $book-filter-height: 230px;
@@ -26,7 +26,7 @@ $statistics-section-height: 150px;
 $section-margin: 30px;
 
 $book-instance-margin: 20px;
-$book-instance-width: ($container-width - $sidebar-width - $section-margin - $book-instance-margin * 3) / 4;
+$book-instance-width: ($container-width - $aside-width - $section-margin - $book-instance-margin * 3) / 4;
 $book-instance-height: 230px;
 $book-transition-time: .3s;
 
