@@ -42,7 +42,7 @@ span.accent {
 
 
 // important paragraphs in aside
-p.widget-label {
+.widget-label {
     font-size: 18px;
 }
 
@@ -75,6 +75,7 @@ input[type='text'] {
 .btn.big {
     font-size: 18px;
     padding: 10px;
+    border: 2px solid $color3;
 }
 
 
@@ -154,7 +155,7 @@ header {
 
 aside {
     color: $color3;
-    padding: 40px 0;
+    padding: 30px 0;
     
     .filter {
         label {
@@ -193,6 +194,7 @@ aside {
     transition-delay: .2s;
     font-family: $font3;
     border-radius: 4px;
+    box-shadow: 3px 3px 1px $color0;
     .front {
         background: $colorA;
         transition: $book-transition-time;
@@ -235,4 +237,54 @@ aside {
 }
 .book-instance:hover {
     cursor: pointer;
+}
+
+
+// view with book info, abstract and content
+#book-details {
+    background: $color3;
+    border-radius: 3px;
+    
+    .flags {
+        height: 35px;
+        width: 100%;
+        background: $color2;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        
+        .flag {
+            float: left;
+            height: 100%;
+            width: ($container-width - $aside-width - $section-margin) / 3;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 18px;
+            color: $color1;
+            transition: $buttons-transition-time;
+        }
+        .info-flag, 
+        .abstr-flag {
+            border-right: 2px solid $color3;
+        }
+        .info-flag {
+            border-top-left-radius: 3px;
+        }
+        .cont-flag {
+            border-top-right-radius: 3px;
+        }
+        .flag:hover {
+            cursor: pointer;
+            background: $colorB;
+            color: $color3;
+        }
+        
+        .active {
+            background: $color3;
+            }
+        .active:hover {
+            cursor: auto;
+            color: $color1;
+            background: $color3;
+        }
+    }
 }

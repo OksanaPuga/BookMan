@@ -1,0 +1,165 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+$container-width: 1020px;
+
+$color0: #2B3740;
+$color1: #626F79;
+$color2: #C0C0C0;
+$color3: #FBFAF9;
+$color4: #FFFFFF;
+$colorA: #2EAC69;
+$colorB: #F58410;
+
+$font1: 'Roboto Slab';
+$font2: 'Oswald';
+$font3: 'Raleway';
+
+$header-height: 70px;
+$aside-width: 260px;
+
+$book-search-height: 125px;
+$book-filter-height: 230px;
+$statistics-section-height: 120px;
+
+$section-margin: 30px;
+
+$book-instance-margin: 20px;
+$book-instance-width: ($container-width - $aside-width - $section-margin - $book-instance-margin * 3) / 4;
+$book-instance-height: 230px;
+$book-transition-time: .3s;
+
+$buttons-transition-time: .2s;
+
+
+.edit-btn {
+    margin-bottom: 15px;
+}
+
+.added {
+    margin-top: 40px;
+    
+}
+.modified {
+    margin-top: 10px;
+    
+}
+
+.random-quote {
+    margin-top: 30px;
+}
+
+.added p, 
+.modified p, 
+.random-quote p {
+    font-size: 15px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+#book-details {
+    background: $color3;
+    border-radius: 3px;
+    
+    .flags {
+        height: 35px;
+        width: 100%;
+        background: $color2;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        
+        .flag {
+            float: left;
+            height: 100%;
+            width: ($container-width - $aside-width - $section-margin) / 3;
+            text-align: center;
+            padding-top: 5px;
+            font-size: 18px;
+            color: $color1;
+            transition: $buttons-transition-time;
+        }
+        .info-flag, 
+        .abstr-flag {
+            border-right: 2px solid $color3;
+        }
+        .info-flag {
+            border-top-left-radius: 3px;
+        }
+        .cont-flag {
+            border-top-right-radius: 3px;
+        }
+        .flag:hover {
+            cursor: pointer;
+            background: $colorB;
+            color: $color3;
+        }
+        
+        .active {
+            background: $color3;
+            }
+        .active:hover {
+            cursor: auto;
+            color: $color1;
+            background: $color3;
+        }
+    }
+    
+    
+    .book-info {
+        min-height: 410px;
+        padding: 40px 35px;
+        color: $color0;
+        
+        .cover {
+            height: 350px;
+            width: 250px;
+            float: left;
+            margin: 0 30px 25px 0;
+            box-shadow: 3px 3px 1px $color1;
+        }
+        
+        .info-categories {
+            margin-left: 280px;
+        }
+        
+        p {
+            margin-bottom: 7px;
+        }
+        
+        .category {
+            font-weight: bolder;
+            font-family: $font3;
+            margin-right: 5px;
+        }
+        
+        .author, 
+        .title {
+            font-family: $font2;
+        }
+        .author {
+            padding-top: 7px;
+            margin-bottom: 0;
+            border-top: 2px solid $colorB;
+            font-size: 25px;
+        }
+        
+        .title {
+            padding-bottom: 7px;
+            margin-bottom: 30px;
+            border-bottom: 4px solid $colorB;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .rate {
+            margin: 20px 0 15px 0;
+            text-align: center;
+        }
+        
+        .description {
+            clear: both;
+            font-size: 15px;
+        }
+    }
+}
