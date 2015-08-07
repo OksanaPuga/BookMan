@@ -106,7 +106,7 @@ $buttons-transition-time: .2s;
     }
     
     
-    .book-info {
+    #book-info {
         min-height: 410px;
         padding: 40px 35px;
         color: $color0;
@@ -116,7 +116,7 @@ $buttons-transition-time: .2s;
             width: 250px;
             float: left;
             margin: 0 30px 25px 0;
-            box-shadow: 3px 3px 1px $color1;
+            box-shadow: 2px 2px 1px $color1;
         }
         
         .info-categories {

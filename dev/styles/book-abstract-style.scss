@@ -1,0 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
+@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+
+$container-width: 1020px;
+
+$color0: #2B3740;
+$color1: #626F79;
+$color2: #C0C0C0;
+$color3: #FBFAF9;
+$color4: #FFFFFF;
+$colorA: #2EAC69;
+$colorB: #F58410;
+
+$font1: 'Roboto Slab';
+$font2: 'Oswald';
+$font3: 'Raleway';
+
+$header-height: 70px;
+$aside-width: 260px;
+
+$book-search-height: 125px;
+$book-filter-height: 230px;
+$statistics-section-height: 120px;
+
+$section-margin: 30px;
+
+$book-instance-margin: 20px;
+$book-instance-width: ($container-width - $aside-width - $section-margin - $book-instance-margin * 3) / 4;
+$book-instance-height: 230px;
+$book-transition-time: .3s;
+
+$buttons-transition-time: .2s;
+
+
+
+#book-abstract {
+    min-height: 410px;
+    padding: 40px 35px;
+    color: $color0;
+       
+    .add-abstr-section {
+        float: left;
+        width: calc(100% - 50px);
+        border: 2px solid $color1;
+        border-right: none;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        padding: 5px 15px 5px 5px;
+        background: $color4;
+        margin-bottom: 40px;
+    }
+
+    textarea {
+        padding: 10px;
+        width: 100%;
+        height: 50px;
+        resize: none;
+        border: none;
+        font-family: $font1;
+        font-size: 16px;
+        color: $color0;
+    }
+
+    .add-abstr-btn {
+        float: right;
+        width: 50px;
+        height: 93px;
+        padding-top: 21px;
+        border-bottom-left-radius: 0;
+        border-top-left-radius: 0;
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    label{ 
+        display: block;
+        float: left;
+        height: 25px;
+        margin-right: 5px;
+        width: calc((100% - 10px) / 3);
+        p {
+            text-align: center;
+            height: 25px;
+            border: 1px solid $color1;
+            border-radius: 2px;
+            color: $color1;
+            font-size: 16px;
+            transition: $buttons-transition-time;
+        }
+    }
+    label:hover {
+        cursor: pointer;
+    }
+    label:last-of-type {
+        margin-right: 0;
+    }
+
+    input {
+        display: none;
+    }
+    input:checked + p {
+        color: $colorB;
+        border-color: $colorB;
+    }
+    
+    
+    article {
+        transition: $buttons-transition-time;
+        margin-bottom: 10px;
+    }
+    article:hover {
+        background: $color2;
+        cursor: pointer
+    }
+    
+    article.review {
+        clear: both;
+        border-top: 3px solid $color2;
+        border-bottom: 3px solid $color2;
+        padding: 0 23px 20px 28px;
+        margin-bottom: 30px;
+        
+        p {
+            padding: 5px 0;
+            font-family: $font3;
+            font-size: 17px;
+        }
+        
+        p:first-child {
+            color: $color2;
+            margin: 10px 0;
+            padding-bottom: 10px;
+            font-weight: bold;
+            font-size: 22px;
+            text-align: center;
+            font-family: $font2;
+            border-bottom: 1px solid $color2;
+            transition: $buttons-transition-time;
+        }
+    }
+    article.review:hover p:first-child {
+        color: $color1;
+        border-bottom: 1px solid $color1;
+    }
+    
+    article.quote {
+        border-left: 8px solid $color2;
+        padding: 15px 10px 15px 21px;
+        font-weight: bolder;
+    }
+    article.quote:hover {
+        border-left: 8px solid $color1;
+    }
+    
+    article.note {
+        padding: 10px 10px 10px 29px;
+        font-family: $font3;
+        font-size: 15px;
+    }
+}
+
+
+.widget-label.quotes-in-book {
+    margin-top: 58px;
+}
+
+.widget-label.notes-in-book {
+    margin-top: 10px;
+}
+
+.filter-abstr {
+    margin-top: 50px;
+}
