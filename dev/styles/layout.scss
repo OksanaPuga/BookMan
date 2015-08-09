@@ -50,41 +50,46 @@ section {
         width: 100%;
         height: 100%;
         overflow: hidden;
-        .wrap-aside{
-            display: table-cell;
-            vertical-align: top;
-            width: $aside-width;
-            position: relative;
-            z-index: 5;
-            padding: 0px 10px;
-            -webkit-transition: all .3s;
-            transition: all .3s;
-        }
-        .wrap-aside.active {
-            width:10px;
-            aside {
-                margin-left: -$aside-width*2;
-            }
-        }
-        .main-content {
-            display: table-cell;
-            vertical-align: top;
-            padding: 30px 0 30px 30px;
-        }
+    }
+    .wrap-aside{
+        display: table-cell;
+        vertical-align: top;
+        width: $aside-width;
+        position: relative;
+        z-index: 5;
+        padding: 0px 10px;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+    }
+    .main-content {
+        display: table-cell;
+        vertical-align: top;
+        padding: 30px 0 30px 0px;
+    }
+    .wrap-aside+.main-content {
+        padding: 30px 0 30px 30px;
     }
     .aside-link {
         display: none;
     }
 }
+.content.active {
+    .wrap-aside {
+        width:10px;
+        aside {
+            margin-left: -$aside-width*2;
+        }
+    }
+}
 
 aside {
     height: 100%;
-    width: 100%;
+    width: $aside-width - 20px;
     margin: 0;
     -webkit-transition: all .3s;
             transition: all .3s;
 }
-header {
+body>header {
     position: fixed;
     z-index: 10;
     width: 100%;

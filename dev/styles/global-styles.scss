@@ -51,15 +51,61 @@ span.accent {
     font-size: 18px;
 }
 
-
-input[type='text'] {
+input[type=text],
+input[type=email],
+input[type=url],
+input[type=password],
+textarea {
     border: none;
     border-radius: 5px;
     width: 100%;
     padding: 0 10px;
     background: $color3;
 }
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=url]:focus,
+input[type=password]:focus,
+textarea {
+  outline: 0;
+  background-color: #faede0;
+}
 
+
+///////////////////BASIC FORM STYLES ///////////
+form.form-control {
+    input[type=text],
+    input[type=email],
+    input[type=url],
+    input[type=password]{
+         height: 30px;
+    }
+    label{
+        color:#fff;
+        font-size: 18px;
+        line-height: 30px;
+    }
+}
+form.form-control > div {
+  clear: both;
+  overflow: hidden;
+  padding: 1px;
+  margin: 0 0 10px 0;
+}
+form.form-control > div > label {
+    width: 25%;
+    float: left;
+    padding-right: 10px;
+    text-align: right;
+}
+form.form-control > div > div {
+  width: 75%;
+  float: right;
+}
+.signup{
+    width: 80%;
+    margin: 0 auto;
+}
 
 
 /////////////////// BUTTONS ///////////////////
@@ -74,7 +120,9 @@ input[type='text'] {
 .btn:hover {
     cursor: pointer;
 }
-
+.btn:active {
+    border-style:groove!important;
+}
 
 // big buttons (in aside)
 .btn.big {
@@ -104,12 +152,19 @@ input[type='text'] {
     color: $color1;
     font-weight: normal;
 }
+.btn.google {
+    background: url(../images/google.png) no-repeat;
+    width: 140px!important;
+    height: 44px;
+    float: left;
+    margin-right: 20px; 
+}
 
 
 
 ////////////// BASIC PAGE PARTS /////////////////
 
-header {
+body>header {
     background: $color0;
     color: $color3;
     
@@ -292,4 +347,10 @@ aside {
             background: $color3;
         }
     }
+
+}
+header.about{
+    color:#fff;
+    margin-bottom: 10%;
+    text-align: center;
 }

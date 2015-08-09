@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var $asidelink = $('.aside-link'), $wrapsidebar = $('.wrap-aside'), $btnmenu = $('.btn-menu');
+    var $asidelink = $('.aside-link'), $wrapsidebar = $('.content'), $btnmenu = $('.btn-menu');
     $asidelink.click(function () {
         $asidelink.toggleClass('active');
         $wrapsidebar.toggleClass('active');

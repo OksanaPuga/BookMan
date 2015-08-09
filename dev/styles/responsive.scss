@@ -1,13 +1,12 @@
 
 //laptops & tablets
 @media screen and (max-width: 1023px){
-	
 }
 
 //tablets & larger smartphones
 @media screen and (max-width: 767px), screen and (orientation: landscape) and (max-width: 767px), screen and (orientation: portrait ) and (max-width: 767px) {
 //layout	
-	header{
+	body>header{
 		.top-nav-mobile {
 			width:100%;
 			background: $color0;
@@ -115,8 +114,61 @@
 		}
 	}
 	//end layout
+
+	//form
+
+	  form.form-control > div {
+	    margin: 0 0 15px 0; 
+	  }
+	  form.form-control > div > label {
+	    width: 100%;
+	    float: none;
+	    margin: 0 0 5px 0;
+	  }
+	  form.form-control > div > div {
+	    width: 100%;
+	    float: none;
+	  }
+	//end form
+
 }
 //smaller smartphones
 @media screen and (max-width: 480px){
-	
+	.content {
+		padding-top: 127px;
+		.wrap-aside+.main-content {
+			display: none;
+			overflow: hidden;
+		}
+		.wrap-aside{
+			display:block;
+			width: 90%;
+			height: 100%;
+		}
+		.aside-link {
+			left:90%;
+		}
+	}
+	.content.active {
+	   	.main-content{
+			display:block;
+		}
+		.wrap-aside{
+			display:table-cell;
+		}
+	}
+	aside {
+		width:100%;
+	}
+	body>header {
+		height: 127px;
+		padding-bottom: 10px;
+		.logo-and-name{
+			width: 100%;
+		}
+		.btn-menu {
+			float: left;
+		}
+	}
+
 }
