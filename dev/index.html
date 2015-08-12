@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book List</title>
-    <link rel="stylesheet" href="../../dist/styles/style.min.css">
+    <link rel="stylesheet" href="styles/style.min.css">
     <script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
+    <script src="scripts/app.min.js"></script>
 </head>
 
 <body>
@@ -44,6 +47,9 @@
             </section>
         </div>
     </div>
+    
+    
+    
     <!-- Template -->   
     <script type="text/ng-template" id="/books.html">
       <div class="search-form">Search: <input type="text" ng-model="search._title" class="btn big"></div>
@@ -80,12 +86,6 @@
       <h1>singePage</h1>
     
     </script>
-    <script src="scripts/app.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.min.js"></script>
-    <script src="app.js"></script>
-    <script src="controllers/controllers.js"></script>
-    <script src="services/services.js"></script>
     
 </body>
 </html>
