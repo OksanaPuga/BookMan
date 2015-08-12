@@ -1,37 +1,3 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
-
-$container-width: 1020px;
-
-$color0: #2B3740;
-$color1: #626F79;
-$color2: #C0C0C0;
-$color3: #FBFAF9;
-$color4: #FFFFFF;
-$colorA: #2EAC69;
-$colorB: #F58410;
-
-$font1: 'Roboto Slab';
-$font2: 'Oswald';
-$font3: 'Raleway';
-
-$header-height: 70px;
-$aside-width: 260px;
-
-$book-search-height: 125px;
-$book-filter-height: 230px;
-$statistics-section-height: 120px;
-
-$section-margin: 30px;
-
-$book-instance-margin: 20px;
-$book-instance-width: ($container-width - $aside-width - $section-margin - $book-instance-margin * 3) / 4;
-$book-instance-height: 230px;
-$book-transition-time: .3s;
-
-$buttons-transition-time: .2s;
-
 
 aside .ok {
     margin-bottom: 15px;

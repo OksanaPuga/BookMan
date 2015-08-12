@@ -19,7 +19,7 @@ gulp.task('scripts', function () {
 });
 
 gulp.task('styles', function () {
-    return gulp.src('dev/styles/**/*.scss')
+    return gulp.src(['dev/styles/variables.scss','dev/styles/**/*.scss'])
         .pipe(sourcemaps.init())
             .pipe(concat('style.min.scss'))
             .pipe(sass().on('error', sass.logError))

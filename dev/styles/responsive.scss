@@ -129,6 +129,13 @@
 	    width: 100%;
 	    float: none;
 	  }
+	  .search-form {
+	    .form-control{
+	       label{
+	            display: block;
+	        }
+	    }
+	 }
 	//end form
 
 }

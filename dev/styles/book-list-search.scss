@@ -1,0 +1,47 @@
+.search-form {
+    background: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 2%;
+    margin: 0 10px;
+    .form-control{
+       label{
+            color: $color0;
+            width: auto;
+            float: none;
+            text-align: center;
+        }
+        input[type="text"] {
+            border: 2px solid $color0;
+            color: $color0; 
+            position: relative;
+        }
+        div.search-input {
+            position: relative;
+            float: none;
+            width: auto;
+
+        }
+        .radio{
+            width: 30%;
+            float: left;
+            label{
+                font-size: 14px; 
+            }
+        } 
+    }
+    input[type=submit] {
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      cursor: pointer;
+      padding: 0 2%;
+      border:0;
+      border-radius: 0 5px 5px 0;
+    }
+}
+.btn-add{
+  padding: 5px 10px;
+}
