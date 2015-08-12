@@ -1,0 +1,42 @@
+<section id="book-search">
+
+    <div class="search-form">
+        <form action="#" class="form-control">
+            <div>
+                <label for="#search">Search books:</label>
+                <div class="search-input">
+                    <input id="search" type="text" ng-model="search._title" class="btn big">
+                    <input type="submit" class="btn big positive" value="Search">
+                </div>
+            </div>
+            <div>
+                <div class="radio">
+                    <input id="field_0" name="sort" type="radio" value="all" checked="checked">
+                    <label class="choice" for="field_0">All</label>
+                </div>
+                <div class="radio">
+                    <input id="field_1" name="sort" type="radio" value="author" checked="checked">
+                    <label class="choice" for="field_1">By author</label>
+                </div>
+                <div class="radio">
+                    <input id="field_2" name="sort" type="radio" value="name" checked="checked">
+                    <label class="choice" for="field_2">By name</label>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    <section id="book-list">
+        <article class="book-instance">
+            <div class="back">
+                <p class="book-author">Tolkien John</p>
+                <p class="book-name">The Hobbit</p>
+                <div class="btn-add btn positive">Add this book</div>
+            </div>
+            <div class="front">
+                <img src="images/The_Book_(Front_Cover).jpg" alt="Book cover">
+            </div>
+        </article>
+    </section>
+    
+</section>
