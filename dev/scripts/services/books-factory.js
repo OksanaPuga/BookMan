@@ -21,7 +21,7 @@ angular.module('bookman').factory('Books', function BookFactory($http, Book) {
                 title: elm.volumeInfo.title,
                 author: elm.volumeInfo.authors[0],
                 image: elm.volumeInfo.imageLinks.thumbnail,
-                category: elm.volumeInfo.categories[0]
+                category: elm.volumeInfo.categories
             }
             book = new Book(obj);
             book.update();
