@@ -200,13 +200,17 @@ aside {
     font-family: $font3;
     border-radius: 4px;
     box-shadow: 3px 3px 1px $color0;
+    a {
+        text-decoration: none;
+    }
     .front {
-        background: $colorA;
+        background: $color3;
         transition: $book-transition-time;
         transition-delay: .2s;
         cursor: pointer;
     }
     .back {
+        text-decoration: none;
         background: $color4;
         text-align: center;
         color: $color0;

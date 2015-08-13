@@ -23,11 +23,11 @@ angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
             obj = {
                 id: elm.id,
                 title: elm.volumeInfo.title,
-                author: elm.volumeInfo.authors[0],
+                author: elm.volumeInfo.authors,
                 publisher: elm.volumeInfo.publisher,
                 publicationDate: elm.volumeInfo.publishedDate,
                 image: elm.volumeInfo.imageLinks.thumbnail,
-
+                category: elm.volumeInfo.categories,
                 length: elm.volumeInfo.pageCount,
                 description: elm.volumeInfo.description
             }

@@ -1,10 +1,30 @@
-angular.module('bookman').factory('Book', function BookFactory( ) {
+angular.module('bookman').factory('Book', function BookFactory() {
     var BookFactory = function (obj) {
         this.id = obj.id;
-        this.title = obj.title;
-        this.author = obj.author;
-        this.image = obj.image;
-        this.category = obj.category;
+        if (obj.title) {
+            this.title = obj.title;
+        }
+        if (obj.author && obj.author.length) {
+            this.author = obj.author.join(', ');
+        }
+        if (obj.image) {
+            this.image = obj.image;
+        }
+        if (obj.category && obj.category.length) {
+            this.category = obj.category;
+        }
+        if (obj.publisher) {
+            this.publisher = obj.publisher;
+        }
+        if (obj.publicationDate) {
+            this.publicationDate = obj.publicationDate;
+        }
+        if (obj.length) {
+            this.length = obj.length;
+        }
+        if (obj.description) {
+            this.description = obj.description;
+        }
     };
     var currentBooks = [];
     BookFactory.prototype.save = function () {
@@ -21,18 +41,18 @@ angular.module('bookman').factory('Book', function BookFactory( ) {
             that.save();
         } else {
             currentBooks = angular.fromJson(sessionStorage.getItem('books'));
-            angular.forEach(currentBooks, function(obj, index){
+            angular.forEach(currentBooks, function (obj, index) {
                 if (obj.id == that.id) {
-                    angular.forEach(that, function(value, property){                     
-                        obj[property] = value;                      
+                    angular.forEach(that, function (value, property) {
+                        obj[property] = value;
                     });
                     sessionStorage.setItem('books', angular.toJson(currentBooks));
-                    isNew = false; 
+                    isNew = false;
                 }
             });
             if (isNew) {
                 that.save();
-            }                
+            }
         }
     };
     BookFactory.prototype.delete = function () {
