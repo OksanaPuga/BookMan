@@ -1,28 +1,28 @@
 <section id="book-details">
 
     <div class="flags">
-        <div class="flag info-flag active">info</div>
-        <div class="flag abstr-flag">abstract</div>
-        <div class="flag cont-flag">content</div>
+        <div class="flag info-flag" ng-click="currentTab = 'info'" ng-class="{active : currentTab === 'info'}">info</div>
+        <div class="flag abstr-flag" ng-click="currentTab = 'abstr'" ng-class="{active : currentTab === 'abstr'}">abstract</div>
+        <div class="flag cont-flag" ng-click="currentTab = 'cont'" ng-class="{active : currentTab === 'cont'}">content</div>
     </div>
 
-    <section id="book-info">
-        <img class="cover" src="{{book.image}}" alt="book cover">
+    <section id="book-info" ng-show="currentTab === 'info'">
+        <img class="cover" ng-src="{{book.image}}" alt="book cover">
         <div class="info-categories">
-            <p class="author">{{book.author}}</p>
-            <p class="title">{{book.title}}</p>
-            <p class="genre"><span class="category">Genre:</span>{{book.category[0]}}</p>
-            <p class="length"><span class="category">Print length:</span> {{book.length}} pages</p>
-            <p class="publisher"><span class="category">Publisher:</span> {{book.publisher}}</p>
-            <p class="pub-date"><span class="category">Publication date:</span> {{book.publicationDate}}</p>
+            <p class="author" ng-show="book.author">{{book.author}}</p>
+            <p class="title" ng-show="book.title">{{book.title}}</p>
+            <p class="genre" ng-show="book.category"><span class="category">Genre:</span>{{book.category}}</p>
+            <p class="length" ng-show="book.length"><span class="category">Print length:</span> {{book.length}} pages</p>
+            <p class="publisher" ng-show="book.publisher"><span class="category">Publisher:</span> {{book.publisher}}</p>
+            <p class="pub-date" ng-show="book.publicationDate"><span class="category">Publication date:</span> {{book.publicationDate}}</p>
             <div class="rate" ng-show="book.rate">
                 <span>{{book.rate}}</span><img src="images/star.png" alt="">
             </div>
         </div>
-        <p class="description"><span class="category">Description:</span>{{book.description}}</p>
+        <p class="description" ng-show="book.description"><span class="category">Description:</span>{{book.description}}</p>
     </section>
 
-    <section id="book-abstract">
+    <section id="book-abstract" ng-show="currentTab === 'abstr'">
         <div class="add-abstr-section">
             <textarea id="abst-area" cols="30" rows="10" placeholder="add a new quote, note or review"></textarea>
             <label for="">
@@ -63,8 +63,8 @@
         </article>
     </section>
 
-    <section id="book-kontent">
-
+    <section id="book-content" ng-show="currentTab === 'cont'">
+        Here will be content of the book. Coming soon...
     </section>
 
 </section>

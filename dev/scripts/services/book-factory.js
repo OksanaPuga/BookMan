@@ -11,7 +11,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
             this.image = obj.image;
         }
         if (obj.category && obj.category.length) {
-            this.category = obj.category;
+            this.category = obj.category.join(', ');
         }
         if (obj.publisher) {
             this.publisher = obj.publisher;
