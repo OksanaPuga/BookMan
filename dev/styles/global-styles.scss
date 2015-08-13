@@ -1,22 +1,15 @@
-
-
 ///////////// VERY BASIC STYLES //////////////
-
 body {
     background: $color1;
     font-family: $font1;
 }
-
 p {
     margin: 0;
 }
-
 // to prevent unexpected outlines in chrome
 *:focus {
     outline: 0;
 }
-
-
 // text with orange background
 span.accent {
     font-family: $font2;
@@ -24,13 +17,10 @@ span.accent {
     color: $color3;
     padding: 0 10px;
 }
-
-
 // important paragraphs in aside
 .widget-label {
     font-size: 18px;
 }
-
 input[type=text],
 input[type=email],
 input[type=url],
@@ -48,22 +38,19 @@ input[type=url]:focus,
 input[type=password]:focus {
     background-color: #faede0;
 }
-
-
 ///////////////////BASIC FORM STYLES ///////////
 form.form-control {
     input[type=text],
     input[type=email],
     input[type=url],
-    input[type=password]{
-         height: 30px;
+    input[type=password] {
+        height: 30px;
     }
-    label{
-        color:#fff;
+    label {
+        color: #fff;
         font-size: 18px;
         line-height: 30px;
     }
-    
 }
 form.form-control > div {
     clear: both;
@@ -81,14 +68,11 @@ form.form-control > div > div {
     width: 75%;
     float: right;
 }
-.signup{
+.signup {
     width: 80%;
     margin: 0 auto;
 }
-
-
 /////////////////// BUTTONS ///////////////////
-
 // all buttons
 .btn {
     text-align: center;
@@ -100,17 +84,14 @@ form.form-control > div > div {
     cursor: pointer;
 }
 .btn:active {
-    border-style:groove!important;
+    border-style: groove!important;
 }
-
 // big buttons (in aside)
 .btn.big {
     font-size: 18px;
     padding: 10px;
     border: 2px solid $color3;
 }
-
-
 // buttons which accept smth.
 .btn.positive {
     background: $colorA;
@@ -118,13 +99,10 @@ form.form-control > div > div {
 .btn.positive:hover {
     background: $colorB;
 }
-
-
 // buttons which cancel smth.
 .btn.negative {
     background: none;
     border: 2px solid $color3;
-    
 }
 .btn.negative:hover {
     background: $color3;
@@ -136,17 +114,12 @@ form.form-control > div > div {
     width: 140px!important;
     height: 44px;
     float: left;
-    margin-right: 20px; 
+    margin-right: 20px;
 }
-
-
-
 ////////////// BASIC PAGE PARTS /////////////////
-
 body>header {
     background: $color0;
     color: $color3;
-    
     .logo-and-name p {
         font-family: $font1;
         font-size: 34px;
@@ -189,13 +162,9 @@ body>header {
         color: $color0;
     }
 }
-
-
-
 aside {
     color: $color3;
     padding: 30px 0;
-    
     .filter {
         label {
             text-align: center;
@@ -224,9 +193,6 @@ aside {
         }
     }
 }
-
-
-
 // small instances of the books
 .book-instance {
     transition: $book-transition-time;
@@ -245,20 +211,25 @@ aside {
         text-align: center;
         color: $color0;
         padding: 25px 25px;
-        .book-author, .book-name {
-            font-family: $font2;
+        .book-author,
+        .book-name {
+            font-family: $font2, $font3, sans-serif;
+            overflow: hidden;
         }
         .book-author {
-            font-size: 18px;
+            font-size: 14px;
+            max-height: 40px;
         }
         .book-name {
             font-weight: bold;
-            font-size: 20px;
-            padding-bottom: 16px; 
+            font-size: 18px;
+            padding-bottom: 16px;
+            margin-bottom: 10px;
+            max-height: 70px;
+            border-bottom: 2px solid $colorB;
         }
         .review {
             padding-top: 5px;
-            border-top: 2px solid $colorB;
             font-size: 14px;
         }
         .quotes {
@@ -277,20 +248,16 @@ aside {
 .book-instance:hover {
     cursor: pointer;
 }
-
-
 // view with book info, abstract and content
 #book-details {
     background: $color3;
     border-radius: 3px;
-    
     .flags {
         height: 35px;
         width: 100%;
         background: $color2;
         border-top-left-radius: 3px;
         border-top-right-radius: 3px;
-        
         .flag {
             float: left;
             height: 100%;
@@ -301,7 +268,7 @@ aside {
             color: $color1;
             transition: $buttons-transition-time;
         }
-        .info-flag, 
+        .info-flag,
         .abstr-flag {
             border-right: 2px solid $color3;
         }
@@ -316,20 +283,18 @@ aside {
             background: $colorB;
             color: $color3;
         }
-        
         .active {
             background: $color3;
-            }
+        }
         .active:hover {
             cursor: auto;
             color: $color1;
             background: $color3;
         }
     }
-
 }
-header.about{
-    color:#fff;
+header.about {
+    color: #fff;
     margin-bottom: 10%;
     text-align: center;
 }

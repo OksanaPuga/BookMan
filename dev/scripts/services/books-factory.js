@@ -1,4 +1,4 @@
-angular.module('bookman').factory('Books', function BookFactory($http, Book) {
+angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
     var factory = {};
 
     factory.init = function () {
@@ -9,19 +9,27 @@ angular.module('bookman').factory('Books', function BookFactory($http, Book) {
     };
     factory.getBookByID = function (id) {
         var books = angular.fromJson(sessionStorage.getItem('books'));
-        return books[id];
+        for (var i = 0; i < books.length; i++) {
+            if (books[i].id === id) {
+                return books[i];
+            }
+        }
     };
 
     factory.init().success(function (response) {
-       var book, elm, obj, appBooks = response.items;
+        var book, elm, obj, appBooks = response.items;
         for (var property in appBooks) {
             elm = appBooks[property];
             obj = {
                 id: elm.id,
                 title: elm.volumeInfo.title,
                 author: elm.volumeInfo.authors[0],
+                publisher: elm.volumeInfo.publisher,
+                publicationDate: elm.volumeInfo.publishedDate,
                 image: elm.volumeInfo.imageLinks.thumbnail,
-                category: elm.volumeInfo.categories
+
+                length: elm.volumeInfo.pageCount,
+                description: elm.volumeInfo.description
             }
             book = new Book(obj);
             book.update();

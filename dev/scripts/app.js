@@ -2,18 +2,20 @@ angular.module('bookman', ['ngRoute']).config(['$routeProvider', function ($rout
     $routeProvider
         .when('/', {
             templateUrl: 'templates/pages/books/index.html',
-            controller: 'BooksController'
+            controller: 'BooksController',
+            controllerAs: 'booksCtrl'
         })
         .when('/search', {
             templateUrl: 'templates/pages/search/index.html',
             controller: 'SearchController'
         })
-        .when('/book/:id', {
-            templateUrl: '/bookDetails.html',
-            controller: 'BooksDetailController'
+        .when('/books/:id', {
+            templateUrl: '/templates/pages/books/details.html',
+            controller: 'BookDetailsController',
+            controllerAs: 'bookDetCtrl'
         })
-        .when('/:alias', {
-            templateUrl: '/singePage.html',
-            controller: 'SingePageController'
-        });
+        //.when('/:alias', {
+        //    templateUrl: '/singePage.html',
+        //    controller: 'SingePageController'
+        //});
 }]);
