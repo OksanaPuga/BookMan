@@ -81,6 +81,8 @@
             background: $colorA;
             padding: 15px;
             margin: 15px 10px 10px;
+            display: block;
+            text-decoration: none;
         }
         .search-book-btn:hover, .manually-btn:hover {
             background: $colorB;
