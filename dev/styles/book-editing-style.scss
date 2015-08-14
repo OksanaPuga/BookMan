@@ -1,47 +1,44 @@
-
 aside .ok {
     margin-bottom: 15px;
 }
-
 #book-editing {
     min-height: 410px;
     padding: 40px 35px;
     color: $color0;
-    
+    background: $color3;
+    border-radius: 3px;
     .cover-box {
         float: left;
         margin: 0 30px 25px 0;
         height: 350px;
         width: 250px;
-        
         .cover {
             height: 350px;
             width: 250px;
             box-shadow: 2px 2px 1px $color1;
         }
-        
         .change-cover-btn {
             position: relative;
             top: -354px;
             height: 350px;
             width: 250px;
-            background: rgba(43,55,64,.4);
+            background: rgba(43, 55, 64, .4);
             text-align: center;
             padding: 130px 40px;
             font-size: 30px;
             font-weight: lighter;
-            color: rgba(251,250,249,.8);
+            color: rgba(251, 250, 249, .8);
             text-shadow: 0 0 6px $color0;
             transition: $buttons-transition-time;
         }
         .change-cover-btn:hover {
-            background: rgba(43,55,64,.6);
-            color: rgba(251,250,249,1);
+            background: rgba(43, 55, 64, .6);
+            color: rgba(251, 250, 249, 1);
             cursor: pointer;
         }
     }
-    
-    input, textarea {
+    input,
+    textarea {
         border-radius: 0;
         display: block;
         font-family: $font1;
@@ -61,15 +58,14 @@ aside .ok {
         border-bottom: 2px solid $color0;
         font-weight: normal;
     }
-    
     label {
         display: block;
-        
         span {
             padding: 10px 10px 0 0;
         }
-        
-        #length, #publDate, #rate {
+        #length,
+        #publDate,
+        #rate {
             display: inline;
             border-top: none;
             border-right: none;
@@ -94,10 +90,12 @@ aside .ok {
         float: right;
         margin-top: 20px;
     }
-    
+    label[for='description'] {
+        clear: both;
+    }
     textarea {
         margin-top: 10px;
-        height: 100px;
+        min-height: 150px;
         resize: vertical;
         border-top: 2px solid $color1;
         border-bottom: 2px solid $color1;
@@ -107,19 +105,16 @@ aside .ok {
         border-top: 2px solid $color0;
         border-bottom: 2px solid $color0;
     }
-    
     .btn-box {
         margin-top: 30px;
         height: 50px;
-        
-        .ok, .cancel {
+        .ok,
+        .cancel {
             float: right;
             width: 200px;
             border: none;
         }
-        .ok {
-            
-        }
+        .ok {}
         .cancel {
             color: $color1;
             margin-right: 10px;

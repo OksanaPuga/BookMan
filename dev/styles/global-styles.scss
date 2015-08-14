@@ -125,14 +125,14 @@ form.form-control > div > div {
 ////////////// BASIC PAGE PARTS /////////////////
 body>header {
     background: $color0;
-    color: $color3;
-    .logo-and-name p {
+    a .logo-and-name p {
         font-family: $font1;
         font-size: 34px;
+        color: $color3;
         font-weight: bold;
         transition: $buttons-transition-time;
     }
-    .logo-and-name:hover {
+    a .logo-and-name:hover p {
         cursor: pointer;
         color: $colorB;
     }
