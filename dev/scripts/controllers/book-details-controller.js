@@ -18,17 +18,19 @@ angular.module('bookman')
         };
 
         $scope.addAbstrItem = function () {
-            if ($scope.abstrItemToAdd.type === 'review') {
-                $scope.book.review = $scope.abstrItemToAdd.content;
-            } else {
-                $scope.book.abstractItems.push($scope.abstrItemToAdd);
+            if ($scope.abstrItemToAdd.content) {
+                if ($scope.abstrItemToAdd.type === 'review') {
+                    $scope.book.review = $scope.abstrItemToAdd.content;
+                } else {
+                    $scope.book.abstractItems.push($scope.abstrItemToAdd);
+                }
+                $scope.abstrItemToAdd = {
+                    type: 'quote',
+                    content: ''
+                };
             }
-            $scope.abstrItemToAdd = {
-                type: 'quote',
-                content: ''
-            };
 
-            var currentbook = new Book ($scope.book);
+            var currentbook = new Book($scope.book);
             currentbook.update();
         }
 }]);
