@@ -1,18 +1,27 @@
 angular.module('bookman').factory('Book', function BookFactory() {
 
     var BookFactory = function (obj) {
+
         this.id = obj.id;
         if (obj.title) {
             this.title = obj.title;
         }
-        if (obj.author && obj.author.length) {
-            this.author = obj.author.join(', ');
+        if (obj.author) {
+            if (angular.isArray(obj.author)){
+                this.author = obj.author.join(', ');
+            } else {
+                this.author = obj.author;
+            }
         }
         if (obj.image) {
             this.image = obj.image;
         }
-        if (obj.category && obj.category.length) {
-            this.category = obj.category.join(', ');
+        if (obj.category) {
+            if (angular.isArray(obj.category)){
+                this.category = obj.author.join(', ');
+            } else {
+                this.category = obj.author;
+            }
         }
         if (obj.publisher) {
             this.publisher = obj.publisher;
@@ -26,9 +35,13 @@ angular.module('bookman').factory('Book', function BookFactory() {
         if (obj.description) {
             this.description = obj.description;
         }
-
-        this.review = null;
-        this.abstractItems = [];
+        if (obj.review) {
+            this.review = obj.review;
+        }
+        if (obj.abstractItems) {
+            this.abstractItems = obj.abstractItems;
+        }
+       
     };
 
     var currentBooks = [];

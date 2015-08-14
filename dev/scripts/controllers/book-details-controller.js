@@ -27,5 +27,8 @@ angular.module('bookman')
                 type: 'quote',
                 content: ''
             };
+
+            var currentbook = new Book ($scope.book);
+            currentbook.update();
         }
 }]);

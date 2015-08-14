@@ -25,11 +25,8 @@ angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
     };
 
 
-    (function () {
-        if (!localStorage.getItem('books')) {
-            factory.init();
-        }
-    })();
+    factory.init();
+
 
 
     factory.getAllBooks = function () {
