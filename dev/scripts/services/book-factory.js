@@ -1,4 +1,5 @@
 angular.module('bookman').factory('Book', function BookFactory() {
+
     var BookFactory = function (obj) {
         this.id = obj.id;
         if (obj.title) {
@@ -25,8 +26,13 @@ angular.module('bookman').factory('Book', function BookFactory() {
         if (obj.description) {
             this.description = obj.description;
         }
+
+        this.review = null;
+        this.abstractItems = [];
     };
+
     var currentBooks = [];
+
     BookFactory.prototype.save = function () {
         if (localStorage.getItem('books')) {
             currentBooks = angular.fromJson(localStorage.getItem('books'));
@@ -34,6 +40,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
         currentBooks.push(this);
         localStorage.setItem('books', angular.toJson(currentBooks));
     };
+
     BookFactory.prototype.update = function () {
         var that = this,
             isNew = true;
@@ -55,8 +62,10 @@ angular.module('bookman').factory('Book', function BookFactory() {
             }
         }
     };
+
     BookFactory.prototype.delete = function () {
         console.log('delete');
     };
+
     return BookFactory;
 });

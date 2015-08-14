@@ -6,6 +6,7 @@
         <div class="flag cont-flag" ng-click="changeTab('cont')" ng-class="{active : isCurrent('cont')}">content</div>
     </div>
 
+
     <section id="book-info" ng-show="isCurrent('info')">
         <img class="cover" ng-src="{{book.image}}" alt="book cover">
         <div class="info-categories">
@@ -22,46 +23,38 @@
         <p class="description" ng-show="book.description"><span class="category">Description:</span>{{book.description}}</p>
     </section>
 
+
     <section id="book-abstract" ng-show="isCurrent('abstr')">
         <div class="add-abstr-section">
-            <textarea id="abst-area" cols="30" rows="10" placeholder="add a new quote, note or review"></textarea>
+            <textarea id="abst-area" placeholder="add a new quote, note or review" ng-model="abstrItemToAdd.content"></textarea>
             <label for="">
-                <input type="radio" name="abstr-type" checked>
+                <input type="radio" value="quote" name="abstr-type" ng-model="abstrItemToAdd.type">
                 <p>quote</p>
             </label>
             <label for="">
-                <input type="radio" name="abstr-type">
+                <input type="radio" value="note" name="abstr-type" ng-model="abstrItemToAdd.type">
                 <p>note</p>
             </label>
             <label for="">
-                <input type="radio" name="abstr-type">
+                <input type="radio" value="review" name="abstr-type" ng-model="abstrItemToAdd.type">
                 <p>review</p>
             </label>
         </div>
-        <div class="btn positive add-abstr-btn">+</div>
+        <div class="btn positive add-abstr-btn" ng-click="addAbstrItem()">+</div>
 
-        <article class="review">
+        <article class="review" ng-show="book.review">
             <p>Review</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum reprehenderit nesciunt impedit, numquam doloremque a ad ut, nobis aut voluptatum cum distinctio. Consectetur et, blanditiis impedit explicabo quos! Voluptates, eaque!</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptate, sequi accusantium expedita distinctio nulla illum, quasi id laboriosam. </p>
+            <p>{{book.review}}</p>
         </article>
 
-        <article class="quote">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores, architecto ea vel esse voluptatibus sequi aut beatae quod debitis, impedit maxime! Illo aperiam maxime debitis aut natus, quis dolore dignissimos!
-        </article>
-
-        <article class="note">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-        </article>
-
-        <article class="note">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea voluptate, sequi accusantium expedita distinctio nulla illum, quasi id laboriosam.
-        </article>
-
-        <article class="quote">
-            Dolorum reprehenderit nesciunt impedit, numquam doloremque a ad ut, nobis aut voluptatum cum distinctio. Consectetur et, blanditiis impedit explicabo quos! Voluptates, eaque!
-        </article>
+        <div class="abstr-items">
+            <p class="no-content-massage" ng-hide="book.abstractItems.length">Your abstract is empty yet. Add some quotes, notes and wright a review!</p>
+            <article ng-repeat="item in book.abstractItems" class="{{item.type}}">
+                {{item.content}}
+            </article>
+        </div>
     </section>
+
 
     <section id="book-content" ng-show="isCurrent('cont')">
         Here will be content of the book. Coming soon...

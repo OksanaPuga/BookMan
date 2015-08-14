@@ -1,9 +1,7 @@
-
 #book-abstract {
     min-height: 410px;
     padding: 40px 35px;
     color: $color0;
-       
     .add-abstr-section {
         float: left;
         width: calc(100% - 50px);
@@ -15,7 +13,6 @@
         background: $color4;
         margin-bottom: 40px;
     }
-
     textarea {
         padding: 10px;
         width: 100%;
@@ -27,7 +24,6 @@
         font-size: 16px;
         color: $color0;
     }
-
     .add-abstr-btn {
         float: right;
         width: 50px;
@@ -38,8 +34,7 @@
         font-size: 35px;
         font-weight: bold;
     }
-    
-    label{ 
+    label {
         display: block;
         float: left;
         height: 25px;
@@ -61,7 +56,6 @@
     label:last-of-type {
         margin-right: 0;
     }
-
     input {
         display: none;
     }
@@ -69,8 +63,12 @@
         color: $colorB;
         border-color: $colorB;
     }
-    
-    
+    .abstr-items {
+        clear: both;
+    }
+    .no-content-massage {
+        padding-top: 50px;
+    }
     article {
         transition: $buttons-transition-time;
         margin-bottom: 10px;
@@ -79,20 +77,17 @@
         background: $color2;
         cursor: pointer
     }
-    
     article.review {
         clear: both;
         border-top: 3px solid $color2;
         border-bottom: 3px solid $color2;
         padding: 0 23px 20px 28px;
         margin-bottom: 30px;
-        
         p {
             padding: 5px 0;
             font-family: $font3;
             font-size: 17px;
         }
-        
         p:first-child {
             color: $color2;
             margin: 10px 0;
@@ -109,7 +104,6 @@
         color: $color1;
         border-bottom: 1px solid $color1;
     }
-    
     article.quote {
         border-left: 8px solid $color2;
         padding: 15px 10px 15px 21px;
@@ -118,23 +112,18 @@
     article.quote:hover {
         border-left: 8px solid $color1;
     }
-    
     article.note {
         padding: 10px 10px 10px 29px;
         font-family: $font3;
         font-size: 15px;
     }
 }
-
-
 .widget-label.quotes-in-book {
     margin-top: 58px;
 }
-
 .widget-label.notes-in-book {
     margin-top: 10px;
 }
-
 .filter-abstr {
     margin-top: 50px;
 }

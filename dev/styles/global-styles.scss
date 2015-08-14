@@ -17,6 +17,12 @@ span.accent {
     color: $color3;
     padding: 0 10px;
 }
+p.no-content-massage {
+    font-size: 20px;
+    font-family: $font3;
+    color: $color2;
+    text-align: center;
+}
 // important paragraphs in aside
 .widget-label {
     font-size: 18px;
