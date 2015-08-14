@@ -1,12 +1,12 @@
 <section id="book-details">
 
     <div class="flags">
-        <div class="flag info-flag" ng-click="currentTab = 'info'" ng-class="{active : currentTab === 'info'}">info</div>
-        <div class="flag abstr-flag" ng-click="currentTab = 'abstr'" ng-class="{active : currentTab === 'abstr'}">abstract</div>
-        <div class="flag cont-flag" ng-click="currentTab = 'cont'" ng-class="{active : currentTab === 'cont'}">content</div>
+        <div class="flag info-flag" ng-click="changeTab('info')" ng-class="{active : isCurrent('info')}">info</div>
+        <div class="flag abstr-flag" ng-click="changeTab('abstr')" ng-class="{active : isCurrent('abstr')}">abstract</div>
+        <div class="flag cont-flag" ng-click="changeTab('cont')" ng-class="{active : isCurrent('cont')}">content</div>
     </div>
 
-    <section id="book-info" ng-show="currentTab === 'info'">
+    <section id="book-info" ng-show="isCurrent('info')">
         <img class="cover" ng-src="{{book.image}}" alt="book cover">
         <div class="info-categories">
             <p class="author" ng-show="book.author">{{book.author}}</p>
@@ -22,7 +22,7 @@
         <p class="description" ng-show="book.description"><span class="category">Description:</span>{{book.description}}</p>
     </section>
 
-    <section id="book-abstract" ng-show="currentTab === 'abstr'">
+    <section id="book-abstract" ng-show="isCurrent('abstr')">
         <div class="add-abstr-section">
             <textarea id="abst-area" cols="30" rows="10" placeholder="add a new quote, note or review"></textarea>
             <label for="">
@@ -63,7 +63,7 @@
         </article>
     </section>
 
-    <section id="book-content" ng-show="currentTab === 'cont'">
+    <section id="book-content" ng-show="isCurrent('cont')">
         Here will be content of the book. Coming soon...
     </section>
 
