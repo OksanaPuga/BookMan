@@ -35,7 +35,6 @@ section {
         overflow: hidden;
     }
     .wrap-aside {
-        float: left; // if here is no float, strange bag occures in the first load of details page
         display: table-cell;
         vertical-align: top;
         width: $aside-width;
@@ -46,7 +45,6 @@ section {
         transition: all .3s;
     }
     .main-content {
-        float: right; // if here is no float, strange bag occures in the first load of details page
         width: $container-width - $aside-width;
         display: table-cell;
         vertical-align: top;
