@@ -19,6 +19,11 @@ angular.module('bookman')
                     $scope.book.review = $scope.abstrItemToAdd.content;
                 } else {
                     $scope.book.abstractItems.push($scope.abstrItemToAdd);
+                    if ($scope.abstrItemToAdd.type === 'quote') {
+                        $scope.book.quotesAmount++;
+                    } else {
+                        $scope.book.notesAmount++;
+                    }
                 }
                 $scope.abstrItemToAdd = {
                     type: 'quote',
