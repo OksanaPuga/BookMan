@@ -55,7 +55,8 @@
 		}
 		.btn-menu:hover:before{opacity: 0;}
 		.btn-menu:hover:after{opacity: 1;}
-
+		.btn-menu.active:before{opacity: 0;}
+		.btn-menu.active:after{opacity: 1;}
 		.top-nav.top-nav-mobile{
 			display:none;
 		}

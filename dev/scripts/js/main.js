@@ -5,11 +5,7 @@ $(document).ready(function () {
         $wrapsidebar.toggleClass('active');
         return false;
     });
-    $btnmenu.click(function () {
-        $btnmenu.toggleClass('active');
-        $btnmenu.next().toggleClass('active');
-        return false;
-    });
+    
 
 });
     
