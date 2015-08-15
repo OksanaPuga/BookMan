@@ -145,9 +145,18 @@ body>header {
             a {
                 color: $color3;
                 text-decoration: initial;
+                display:block;
+                width: 100%;
+                max-height:100%;
             }
         }
         li:hover {
+            background: $color3;
+            a {
+                color: $color0;
+            }
+        }
+        li.active {
             background: $color3;
             a {
                 color: $color0;
