@@ -35,6 +35,12 @@ angular.module('bookman').factory('Book', function BookFactory() {
         this.abstractItems = obj.abstractItems || [];
         this.quotesAmount = obj.quotesAmount || 0;
         this.notesAmount = obj.notesAmount || 0;
+
+        if (!obj.added) {
+            this.added = new Date();
+        }
+
+        this.modified = obj.modified || new Date();
     };
 
     var currentBooks = [];

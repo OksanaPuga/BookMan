@@ -14,7 +14,7 @@ angular.module('bookman')
                 $scope.book[param] = $scope.editedBookInfo[param];
             }
 
-
+            $scope.book.modified = new Date();
             new Book($scope.book).update();
         }
 
