@@ -31,8 +31,8 @@ angular.module('bookman').factory('Book', function BookFactory() {
         this.publicationDate = obj.publicationDate || null;
         this.length = obj.length || null;
         this.description = obj.description || null;
-        this.review = null;
-        this.abstractItems = [];
+        this.review = obj.review || null;
+        this.abstractItems = obj.abstractItems || [];
     };
 
     var currentBooks = [];

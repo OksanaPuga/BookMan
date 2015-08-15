@@ -1,42 +1,67 @@
-<section id="book-editing">
+<div class="wrap-aside">
+    <aside>
+        <div class="btn big positive ok">save</div>
+        <div class="btn big negative cancel">cancel</div>
 
-    <div class="cover-box">
-        <img ng-src="{{editedBookInfo.image}}" alt="book cover" class="cover">
-        <div class="change-cover-btn">change cover</div>
-    </div>
+        <div class="widget-label added">
+            <span class="accent">Added:</span>
+            <p>Jan 16, 2015</p>
+        </div>
 
-    <input type="text" placeholder="author" name="author" id="author" ng-model="editedBookInfo.author">
-    <input type="text" placeholder="title" name="title" id="title" required ng-model="editedBookInfo.title">
-    <input type="text" placeholder="genre" name="genre" id="genre" ng-model="editedBookInfo.category">
-    <input type="text" placeholder="publisher" name="publisher" id="publisher" ng-model="editedBookInfo.publisher">
+        <div class="widget-label modified">
+            <span class="accent">Last Modified:</span>
+            <p>Apr 28, 2015</p>
+        </div>
 
-    <label for="length">
-        <span>Length:</span>
-        <input type="number" placeholder="pages" name="length" id="length" ng-model="editedBookInfo.length">
-    </label>
+        <div class="widget-label random-quote">
+            <span class="accent">Random quote:</span>
+            <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda magni, aut debitis sit dignissimos adipisci sapiente reiciendis id soluta voluptatum officiis culpa inventore, nesciunt alias amet laudantium voluptates quos eligendi. "</p>
+        </div>
+    </aside>
+</div>
 
-    <label for="rate">
-        <span>Rate:</span>
-        <input type="number" name="rate" max=5 min="1" value="5" id="rate" ng-model="editedBookInfo.rate">
-    </label>
 
-    <label for="publDate">
-        <span>Publication date:</span>
-        <input type="date" name="publDate" id="publDate" ng-model="editedBookInfo.publicationDate">
-    </label>
+<section class="main-content">
+    <section id="book-editing">
 
-    <label for="description">
-        <span>Description:</span>
-        <textarea name="description" id="description" ng-model="editedBookInfo.description"></textarea>
-    </label>
+        <div class="cover-box">
+            <img ng-src="{{editedBookInfo.image}}" alt="book cover" class="cover">
+            <div class="change-cover-btn">change cover</div>
+        </div>
 
-    <div class="btn-box clearfix">
-        <a ng-click="saveChanges()" ng-href="{{backUrl}}">
-            <div class="btn big positive ok">save</div>
-        </a>
-        <a ng-href="{{backUrl}}">
-            <div class="btn big negative cancel">cancel</div>
-        </a>
-    </div>
+        <input type="text" placeholder="author" name="author" id="author" ng-model="editedBookInfo.author">
+        <input type="text" placeholder="title" name="title" id="title" required ng-model="editedBookInfo.title">
+        <input type="text" placeholder="genre" name="genre" id="genre" ng-model="editedBookInfo.category">
+        <input type="text" placeholder="publisher" name="publisher" id="publisher" ng-model="editedBookInfo.publisher">
 
+        <label for="length">
+            <span>Length:</span>
+            <input type="number" placeholder="pages" name="length" id="length" ng-model="editedBookInfo.length">
+        </label>
+
+        <label for="rate">
+            <span>Rate:</span>
+            <input type="number" name="rate" max=5 min="1" value="5" id="rate" ng-model="editedBookInfo.rate">
+        </label>
+
+        <label for="publDate">
+            <span>Publication date:</span>
+            <input type="date" name="publDate" id="publDate" ng-model="editedBookInfo.publicationDate">
+        </label>
+
+        <label for="description">
+            <span>Description:</span>
+            <textarea name="description" id="description" ng-model="editedBookInfo.description"></textarea>
+        </label>
+
+        <div class="btn-box clearfix">
+            <a ng-click="saveChanges()" ng-href="{{backUrl}}">
+                <div class="btn big positive ok">save</div>
+            </a>
+            <a ng-href="{{backUrl}}">
+                <div class="btn big negative cancel">cancel</div>
+            </a>
+        </div>
+
+    </section>
 </section>
