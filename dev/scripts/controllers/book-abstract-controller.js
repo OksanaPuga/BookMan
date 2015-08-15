@@ -3,8 +3,6 @@ angular.module('bookman')
 
         $scope.book = Books.getBookByID($routeParams.id);
         $scope.currentTab = 'abstr';
-        $scope.infoUrl = '#/books/' + $routeParams.id + '/info';
-        $scope.contentUrl = '#/books/' + $routeParams.id + '/content';
 
         $scope.isCurrent = function (tab) {
             return $scope.currentTab === tab;

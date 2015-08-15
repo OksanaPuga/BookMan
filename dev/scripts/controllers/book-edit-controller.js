@@ -8,7 +8,7 @@ angular.module('bookman')
             $scope.editedBookInfo[param] = $scope.book[param];
         }
 
-        $scope.backUrl = '#/books/' + $routeParams.id;
+        $scope.backUrl = '#/books/' + $routeParams.id + '/info';
         $scope.saveChanges = function () {
 
             for (var param in $scope.editedBookInfo) {
