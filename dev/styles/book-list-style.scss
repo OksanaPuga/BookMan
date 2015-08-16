@@ -1,14 +1,12 @@
-
 .book-search-section {
     height: $book-search-height;
     input {
-        margin-top: 12px;
         height: 30px;
     }
+    input:first-of-type {
+        margin: 12px 0 5px;
+    }
 }
-
-
-
 // layout
 .statistics-section {
     height: $statistics-section-height;
@@ -22,9 +20,6 @@
     padding-top: 10px;
     text-align: center;
 }
-
-
-
 // layout
 .new-book-btn {
     float: left;
@@ -32,7 +27,8 @@
     height: $book-instance-height;
     margin: $book-instance-margin;
     overflow: hidden;
-    .front, .back {
+    .front,
+    .back {
         width: $book-instance-width;
         height: $book-instance-height;
     }
@@ -48,7 +44,8 @@
 }
 // styles
 .new-book-btn {
-    .front, .back {
+    .front,
+    .back {
         border: 3px dashed $colorA;
         border-radius: 5px;
     }
@@ -75,7 +72,8 @@
     .back {
         padding-top: 30px;
         background: $color4;
-        .search-book-btn, .manually-btn {
+        .search-book-btn,
+        .manually-btn {
             color: $color3;
             font-size: 18px;
             background: $colorA;
@@ -84,7 +82,8 @@
             display: block;
             text-decoration: none;
         }
-        .search-book-btn:hover, .manually-btn:hover {
+        .search-book-btn:hover,
+        .manually-btn:hover {
             background: $colorB;
         }
     }

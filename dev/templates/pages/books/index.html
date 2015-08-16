@@ -2,10 +2,9 @@
 <div class="container">
     <div class="wrap-aside">
         <aside>
-            <div class="book-search-section">
-                <p class="widget-label"><span class="accent">Find book</span> in your list:</p>
-                <input type="text">
-            </div>
+
+            <book-search-section></book-search-section>
+
             <div class="filter">
                 <p class="widget-label"><span class="accent">Filter</span> your books:</p>
                 <label for="">
@@ -48,7 +47,7 @@
                 </div>
             </article>
 
-            <article class="book-instance" ng-repeat="book in books">
+            <article class="book-instance" ng-repeat="book in books | filter:typedFilter ">
                 <a ng-href="#/books/{{book.id}}/info">
                     <div class="back">
                         <p class="book-author">{{book.author}}</p>
