@@ -36,13 +36,13 @@
                 </div>
                 <div class="btn positive add-abstr-btn" ng-click="addAbstrItem()">+</div>
 
-                <article class="review" ng-show="{{book.review && typesToShow.review}}">
+                <article class="review" ng-show="book.review && typesToShow.review">
                     <p>Review</p>
                     <p>{{book.review}}</p>
                 </article>
 
                 <div class="abstr-items">
-                    <p class="no-content-massage" ng-hide="book.abstractItems.length">Your abstract is empty yet. Add some quotes, notes and wright a review!</p>
+                    <p class="no-content-massage" ng-hide="book.abstractItems.length || book.review">Your abstract is empty yet. Add some quotes, notes and wright a review!</p>
                     <article ng-repeat="item in book.abstractItems | abstractFilter:typesToShow" class="{{item.type}}">
                         {{item.content}}
                     </article>
