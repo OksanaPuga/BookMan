@@ -6,6 +6,10 @@ body {
 p {
     margin: 0;
 }
+ul{
+    margin:0;
+    padding:0;
+}
 a {
     text-decoration: none;
 }
@@ -60,6 +64,9 @@ form.form-control {
         font-size: 18px;
         line-height: 30px;
     }
+    input.ng-invalid {
+        border: 2px solid $colorB!important;
+    }
 }
 form.form-control > div {
     clear: both;
@@ -80,6 +87,16 @@ form.form-control > div > div {
 .signup {
     width: 80%;
     margin: 0 auto;
+}
+.icon-added{
+    display: block;
+    height: 70px;
+    width: 70px;
+    background-color: $colorA;
+    border-radius: 35px;
+    color: #fff;
+    margin: 0 auto;
+    line-height: 70px;
 }
 /////////////////// BUTTONS ///////////////////
 // all buttons
@@ -233,7 +250,7 @@ aside {
         background: $color4;
         text-align: center;
         color: $color0;
-        padding: 25px 25px;
+        padding: 10px;
         .book-author,
         .book-name {
             font-family: $font2, $font3, sans-serif;
@@ -248,7 +265,7 @@ aside {
             font-size: 18px;
             padding-bottom: 16px;
             margin-bottom: 10px;
-            max-height: 70px;
+            max-height: 110px;
             border-bottom: 2px solid $colorB;
         }
         .review {

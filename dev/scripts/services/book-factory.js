@@ -12,7 +12,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
                 this.author = obj.author;
             }
         } else {
-            this.author = obj.author;
+            this.author = null;
         }
 
         this.image = obj.image || null;
