@@ -2,14 +2,13 @@
 <div class="container">
     <div class="wrap-aside">
         <aside>
+
             <edit-delete-btn></edit-delete-btn>
 
             <added-modified></added-modified>
 
-            <div class="widget-label random-quote">
-                <span class="accent">Random quote:</span>
-                <p>" Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda magni, aut debitis sit dignissimos adipisci sapiente reiciendis id soluta voluptatum officiis culpa inventore, nesciunt alias amet laudantium voluptates quos eligendi. "</p>
-            </div>
+            <random-quote></random-quote>
+
         </aside>
     </div>
 
@@ -19,7 +18,6 @@
         <section id="book-details">
 
             <div details-flags></div>
-
 
             <section id="book-info" ng-show="isCurrent('info')">
                 <img class="cover" ng-src="{{book.image}}" alt="book cover">
@@ -31,7 +29,7 @@
                     <p class="publisher" ng-show="book.publisher"><span class="category">Publisher:</span> {{book.publisher}}</p>
                     <p class="pub-date" ng-show="book.publicationDate"><span class="category">Publication date:</span> {{book.publicationDate}}</p>
                     <div class="rate" ng-show="book.rate">
-                        <span>{{book.rate}}</span><img src="images/star.png" alt="">
+                        <img src="images/star.png" alt="" ng-repeat="star in book.rate">
                     </div>
                 </div>
                 <p class="description" ng-show="book.description"><span class="category">Description:</span>{{book.description}}</p>

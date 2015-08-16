@@ -30,6 +30,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
         this.publisher = obj.publisher || null;
         this.publicationDate = obj.publicationDate || null;
         this.length = obj.length || null;
+        this.rate = obj.rate || null;
         this.description = obj.description || null;
         this.review = obj.review || null;
         this.abstractItems = obj.abstractItems || [];

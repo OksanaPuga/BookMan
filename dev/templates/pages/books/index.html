@@ -56,8 +56,8 @@
                         <p class="review" ng-show="book.review">Review</p>
                         <p class="quotes">Quotes: {{book.quotesAmount}}</p>
                         <p class="notes">Notes: {{book.notesAmount}}</p>
-                        <div class="rate" ng-show="book.rate">
-                            <span>{{book.rate}}</span><img src="images/star.png" alt="">
+                        <div class="rate" ng-show="{{book.rate.length > 1}}">
+                            <img src="images/star.png" alt="" ng-repeat="star in book.rate">
                         </div>
                     </div>
                     <div class="front">
