@@ -12,6 +12,11 @@ angular.module('bookman', ['ngRoute']).config(['$routeProvider', function ($rout
             templateUrl: 'templates/pages/search/index.html',
             controller: 'SearchController'
         })
+        .when('/add', {
+            templateUrl: 'templates/pages/books/add.html',
+            controller: 'BookAddController',
+            controllerAs: 'bookAddCtrl'
+        })
         .when('/books/:id/info', {
             templateUrl: 'templates/pages/books/details/info.html',
             controller: 'BookInfoController',

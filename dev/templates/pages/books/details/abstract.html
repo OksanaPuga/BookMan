@@ -36,7 +36,7 @@
                 </div>
                 <div class="btn positive add-abstr-btn" ng-click="addAbstrItem()">+</div>
 
-                <article class="review" ng-show="typesToShow.review">
+                <article class="review" ng-show="{{book.review && typesToShow.review}}">
                     <p>Review</p>
                     <p>{{book.review}}</p>
                 </article>
