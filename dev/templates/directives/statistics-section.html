@@ -1,4 +1,9 @@
-<div class="statistics-section">
-    <p class="widget-label">You have <span class="accent">45 books</span> in your list!</p>
+<div class="statistics-section" ng-show="books.length">
+    <p class="widget-label">You have
+        <span class="accent">{{books.length}}
+            <span ng-show="{{books.length === 1}}"> book</span><span ng-show="{{books.length > 1}}"> books</span>
+        </span>
+        in your list!
+    </p>
     <div class="btn big positive">more statistics</div>
 </div>
