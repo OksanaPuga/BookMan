@@ -186,6 +186,7 @@ aside {
     .filter {
         label {
             text-align: center;
+            color: darkgray;
             padding: 1px;
             font-size: 15px;
             border-radius: 2px;
@@ -197,7 +198,7 @@ aside {
             color: $colorB;
             font-weight: bolder;
             input:checked + span {
-                color: darkgray;
+                color: $color1;
             }
         }
         .btn {
@@ -207,7 +208,7 @@ aside {
             display: none;
         }
         input:checked + span {
-            color: darkgray;
+            color: $color3;
         }
     }
 }

@@ -1,16 +1,16 @@
 <div class="filter filter-abstr">
     <p class="widget-label"><span class="accent">Filter</span> this abstract:</p>
     <label for="">
-        <input type="checkbox">
+        <input type="checkbox" ng-model="typesToShow.review">
         <span>Review</span>
     </label>
     <label for="">
-        <input type="checkbox">
+        <input type="checkbox" ng-model="typesToShow.quotes">
         <span>Quotes</span>
     </label>
     <label for="">
-        <input type="checkbox">
+        <input type="checkbox" ng-model="typesToShow.notes">
         <span>Notes</span>
     </label>
-    <div class="btn big negative">reset filters</div>
+    <div class="btn big negative" ng-click="showAllAbstract()">reset filters</div>
 </div>

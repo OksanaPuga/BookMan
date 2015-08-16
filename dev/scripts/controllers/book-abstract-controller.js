@@ -8,6 +8,20 @@ angular.module('bookman')
             return $scope.currentTab === tab;
         }
 
+        $scope.typesToShow = {
+            quotes: true,
+            notes: true,
+            review: true
+        }
+
+        $scope.showAllAbstract = function () {
+            $scope.typesToShow = {
+                quotes: true,
+                notes: true,
+                review: true
+            }
+        }
+
         $scope.abstrItemToAdd = {
             type: 'quote',
             content: ''
