@@ -43,8 +43,18 @@ $stat-info-width: 330px;
     }
     .book {
         position: relative;
+        display: table;
         box-shadow: 0 3px 0 3px $color3, 3px 3px 0 3px $color3, -3px 3px 0 3px $color3;
         border: 1px solid $color3;
+        p {
+            display: table-cell;
+            height: 100%;
+            vertical-align: middle;
+            color: #fff;
+            padding-left: 10px;
+            font-size: 13px;
+
+        }
     }
     .book:nth-child(3n), .book:nth-child(3n + 2) {
         background: $color1;
@@ -63,51 +73,7 @@ $stat-info-width: 330px;
         width: 97%;
         height: 20px;
     }
-    .book:nth-child(2) {
-        width: 91%;
-        height: 29px;
-        left: 7px;
-    }
-    .book:nth-child(3) {
-        width: 93%;
-        height: 30px;
-    }
-    .book:nth-child(4) {
-        width: 79%;
-        height: 34px;
-        left: 4px;
-    }
-    .book:nth-child(5) {
-        width: 88%;
-        height: 19px;
-        left: 7px;
-    }
-    .book:nth-child(6) {
-        width: 83%;
-        height: 40px;
-    }
-    .book:nth-child(7) {
-        width: 100%;
-        height: 30px;
-    }
-    .book:nth-child(8) {
-        width: 79%;
-        height: 34px;
-        left: 6px;
-    }
-    .book:nth-child(9) {
-        width: 88%;
-        height: 19px;
-    }
-    .book:nth-child(10) {
-        width: 83%;
-        height: 40px;
-        left: 5px;
-    }
-    .book:nth-child(11) {
-        width: 100%;
-        height: 30px;
-    }
+
     img.comparison {
         margin-top: -10px;
         margin-bottom: -15px;
