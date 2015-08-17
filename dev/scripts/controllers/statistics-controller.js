@@ -8,7 +8,10 @@ angular.module('bookman').controller('StatisticsController', ['$scope', 'Books',
 		amountPages = 0,
 		avarageQuotes,
 		avarageNotes;
-	
+
+ 	function getRandom(min,max){
+	 	return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
 
 	angular.forEach(books, function (obj) {
 		if (obj.quotesAmount) {
@@ -27,7 +30,12 @@ angular.module('bookman').controller('StatisticsController', ['$scope', 'Books',
 
 		if(obj.length){
 			amountPages += obj.length;
-		}		
+		}	
+		obj.style = {
+			width : getRandom(80, 90),
+		 	left: getRandom(-5, 10),
+		 	height: getRandom(20, 50),
+		}
 	});
 
 	avarageQuotes = parseInt( sumQuotes / books.length);
@@ -45,10 +53,6 @@ angular.module('bookman').controller('StatisticsController', ['$scope', 'Books',
 	};
 	$scope.books = books;
 
-	$scope.getRandom = function(min,max){
-	  return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-	$scope.booksHeight = parseInt(amountPages * 0.3 / 10);
+	$scope.booksHeight = parseInt(amountPages * 0.09 / 10);
 
 }]);
