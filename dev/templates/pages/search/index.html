@@ -2,27 +2,9 @@
 <div class="container">
     <div class="wrap-aside">
         <aside>
-            <div class="filter">
-                <p class="widget-label"><span class="accent">Filter</span> books:</p>
-                <label for="">
-                    <input type="checkbox">
-                    <span>Adventures</span>
-                </label>
-                <label for="">
-                    <input type="checkbox">
-                    <span>Science</span>
-                </label>
-                <label for="">
-                    <input type="checkbox">
-                    <span>Business</span>
-                </label>
-                <label for="">
-                    <input type="checkbox">
-                    <span>Romantic</span>
-                </label>
-                <div class="btn big negative">reset filters</div>
-            </div>
-            <quick-statistics></quick-statistics>
+
+            <statistics-section></statistics-section>
+
         </aside>
     </div>
     <section class="main-content">
@@ -33,13 +15,13 @@
                     <label for="#search">Search books:</label>
                     <div class="search-input">
                         <input id="search" type="text" name="text" ng-model="searchParam.text" class="btn big" required>
-                        <input type="submit" class="btn big positive" value="Search" ng-click="submitSearch(formSearch)">                    
+                        <input type="submit" class="btn big positive" value="Search" ng-click="submitSearch(formSearch)">
                     </div>
 
                 </div>
                 <div>
                     <div class="radio">
-                        <input id="field_0" name="term" type="radio" value="all" ng-model="searchParam.byTerm" ng-checked="true" >
+                        <input id="field_0" name="term" type="radio" value="all" ng-model="searchParam.byTerm" ng-checked="true">
                         <label class="choice" for="field_0">All</label>
                     </div>
                     <div class="radio">
@@ -51,24 +33,24 @@
                         <label class="choice" for="field_2">By name</label>
                     </div>
                 </div>
-            </form>       
+            </form>
             <p class="no-content-massage" ng-show="noResults">No results found for request {{searchParam.text}}</p>
-        </div> 
+        </div>
         <div id="book-list">
             <ul>
-                <li class="book-instance" ng-repeat="book in tempBooks">                   
+                <li class="book-instance" ng-repeat="book in tempBooks">
                     <div class="back">
                         <p class="book-author">{{book.author[0]}}</p>
                         <p class="book-name">{{book.title}}</p>
 
-                        <button ng-hide = "book.isAdded" class="btn-add btn positive" ng-click="addBook($index, book)"><span>Add this book</span></button>
-                        <span ng-show = "book.isAdded" class="icon-added">Added</span>
+                        <button ng-hide="book.isAdded" class="btn-add btn positive" ng-click="addBook($index, book)"><span>Add this book</span></button>
+                        <span ng-show="book.isAdded" class="icon-added">Added</span>
                     </div>
                     <div class="front">
                         <img ng-src="{{book.image}}" alt="Book cover">
                     </div>
                 </li>
-            </ul>   
+            </ul>
         </div>
     </section>
 </div>
