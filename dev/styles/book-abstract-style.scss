@@ -72,10 +72,34 @@
     article {
         transition: $buttons-transition-time;
         margin-bottom: 10px;
+        .btn-box {
+            display: none;
+            margin-top: 20px;
+            font-weight: normal;
+            font-family: $font1;
+            .btn {
+                width: 50px;
+                float: right;
+                width: 70px;
+            }
+            .negative {
+                border: none;
+                background: none;
+                color: $color1;
+                margin-right: 10px;
+            }
+            .negative:hover {
+                background: $color1;
+                color: $color3;
+            }
+        }
     }
     article:hover {
         background: $color2;
         cursor: pointer
+    }
+    article.opened {
+        background: $color2;
     }
     article.review {
         clear: both;

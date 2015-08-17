@@ -4,15 +4,36 @@ angular.module('bookman')
         $scope.book = Books.getBookByID($routeParams.id);
         $scope.currentTab = 'abstr';
 
-        $scope.isCurrent = function (tab) {
-            return $scope.currentTab === tab;
-        }
-
         $scope.typesToShow = {
             quotes: true,
             notes: true,
             review: true
         }
+
+        $scope.abstrItemToAdd = {
+            type: 'quote',
+            content: '',
+            index: null
+        };
+
+        $scope.isCurrent = function (tab) {
+            return $scope.currentTab === tab;
+        };
+
+
+        $scope.increaseNotesAmount = function () {
+            $scope.book.notesAmount++;
+        };
+        $scope.increaseQuotesAmount = function () {
+            $scope.book.quotesAmount++;
+        };
+        $scope.decreaseNotesAmount = function () {
+            $scope.book.notesAmount--;
+        };
+        $scope.decreaseQuotesAmount = function () {
+            $scope.book.quotesAmount--;
+        }
+
 
         $scope.showAllAbstract = function () {
             $scope.typesToShow = {
@@ -20,33 +41,110 @@ angular.module('bookman')
                 notes: true,
                 review: true
             }
+        };
+
+        $scope.closeAbstracts = function ($event) {
+            var target = $event.target;
+
+            if (!$(target).hasClass('review') && !$(target).hasClass('quote') && !$(target).hasClass('note')) {
+                $('article').find('.btn-box').hide();
+                $('article').removeClass('opened');
+            }
         }
 
-        $scope.abstrItemToAdd = {
-            type: 'quote',
-            content: ''
+        $scope.toggleButtons = function ($event) {
+            var target = $event.target;
+
+            if (!$(target).hasClass('opened')) {
+                $('article').find('.btn-box').hide();
+                $('article').removeClass('opened');
+            }
+            $($event.currentTarget).find('.btn-box').toggle();
+            $($event.currentTarget).toggleClass('opened');
+        };
+
+
+        $scope.updateBookAbstr = function () {
+            $scope.book.modified = new Date();
+            var currentbook = new Book($scope.book);
+            currentbook.update();
         };
 
         $scope.addAbstrItem = function () {
-            if ($scope.abstrItemToAdd.content) {
-                if ($scope.abstrItemToAdd.type === 'review') {
-                    $scope.book.review = $scope.abstrItemToAdd.content;
-                } else {
-                    $scope.book.abstractItems.push($scope.abstrItemToAdd);
-                    if ($scope.abstrItemToAdd.type === 'quote') {
-                        $scope.book.quotesAmount++;
+
+            var editedItem = $scope.abstrItemToAdd,
+                currentItem = $scope.book.abstractItems[$scope.abstrItemToAdd.index];
+
+            if (editedItem.content) {
+                if (editedItem.index === null) {
+                    if (editedItem.type === 'review') {
+                        $scope.book.review = editedItem.content;
                     } else {
-                        $scope.book.notesAmount++;
+                        $scope.book.abstractItems.push(editedItem);
+                        if (editedItem.type === 'quote') {
+                            $scope.increaseQuotesAmount();
+                        } else {
+                            $scope.increaseNotesAmount();
+                        }
                     }
+                } else {
+                    if (currentItem.type === 'note' && editedItem.type === 'quote') {
+                        $scope.decreaseNotesAmount();
+                        $scope.increaseQuotesAmount();
+                    } else if (currentItem.type === 'quote' && editedItem.type === 'note') {
+                        $scope.decreaseQuotesAmount();
+                        $scope.increaseNotesAmount();
+                    } else if (editedItem.type === 'review') {
+                        $scope.book.review = editedItem.content;
+                        $scope.deleteAbstrItem(editedItem.index);
+                        $scope.abstrItemToAdd = {
+                            type: 'quote',
+                            content: '',
+                            index: null
+                        };
+                        return;
+                    }
+                    currentItem.content = editedItem.content;
+                    currentItem.type = editedItem.type;
                 }
                 $scope.abstrItemToAdd = {
                     type: 'quote',
-                    content: ''
+                    content: '',
+                    index: null
                 };
 
-                $scope.book.modified = new Date();
-                var currentbook = new Book($scope.book);
-                currentbook.update();
+                $scope.updateBookAbstr();
             }
-        }
+        };
+
+        $scope.editAbstrItem = function ($index) {
+            $scope.abstrItemToAdd.type = $scope.book.abstractItems[$index].type;
+            $scope.abstrItemToAdd.content = $scope.book.abstractItems[$index].content;
+            $scope.abstrItemToAdd.index = $index;
+
+            $scope.updateBookAbstr();
+        };
+
+        $scope.deleteAbstrItem = function ($index) {
+            if ($scope.book.abstractItems[$index].type === 'quote') {
+                $scope.decreaseQuotesAmount();
+            } else if ($scope.book.abstractItems[$index].type === 'note') {
+                $scope.decreaseNotesAmount();
+            }
+            $scope.book.abstractItems.splice([$index], 1);
+
+            $scope.updateBookAbstr();
+        };
+
+        $scope.editReview = function () {
+            $scope.abstrItemToAdd.type = 'review';
+            $scope.abstrItemToAdd.content = $scope.book.review;
+
+            $scope.updateBookAbstr();
+        };
+
+        $scope.deleteReview = function () {
+            $scope.book.review = null;
+            $scope.updateBookAbstr();
+        };
 }]);
