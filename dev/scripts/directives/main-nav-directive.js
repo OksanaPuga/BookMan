@@ -5,13 +5,9 @@ angular.module('bookman')
             templateUrl: 'templates/directives/main-nav.html',
             scope: {},
             link: function(scope, element, attrs) {
-                scope.class = "";
+                scope.isActiveClass = false;
                 scope.openMenu = function() {
-                    if (scope.class == ""){
-                        scope.class = "active"
-                    } else {
-                        scope.class = "";
-                    }
+                    scope.isActiveClass = !scope.isActiveClass;
                 } 
                 scope.isActive = function (viewLocation) {
                      return viewLocation === $location.path();
