@@ -77,7 +77,14 @@ angular.module('bookman').factory('Book', function BookFactory() {
     };
 
     BookFactory.prototype.delete = function () {
-        console.log('delete');
+        var that = this,
+            currentBooks = angular.fromJson(localStorage.getItem('books'));
+            angular.forEach(currentBooks, function (obj, index) {
+                if (obj.id == that.id) {
+                    currentBooks.splice(index, 1); 
+                    localStorage.setItem('books', angular.toJson(currentBooks));
+                }
+            });
     };
 
     return BookFactory;
