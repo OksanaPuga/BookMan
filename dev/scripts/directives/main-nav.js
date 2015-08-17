@@ -1,24 +1,21 @@
 angular.module('bookman')
-    .directive('mainNav', function(){
+    .directive('mainNav', [ '$location', function($location){
         return {
             restrict: 'E',
             templateUrl: 'templates/directives/main-nav.html',
-            scope: true,
-            link: function($scope, element, attrs) {
-                $scope.class = "";
-                element.find("a.btn-menu").on('click', function() {
-                    if ($scope.class == ""){
-                        $scope.class = "active"
+            scope: {},
+            link: function(scope, element, attrs) {
+                scope.class = "";
+                scope.openMenu = function() {
+                    if (scope.class == ""){
+                        scope.class = "active"
                     } else {
-                        $scope.class = "";
+                        scope.class = "";
                     }
-                    
-                });         
-            },
-            controller: function($scope, $location) {
-               $scope.isActive = function (viewLocation) {
+                } 
+                scope.isActive = function (viewLocation) {
                      return viewLocation === $location.path();
-                };    
+                };          
             }
         }
-    });
+    }]);
