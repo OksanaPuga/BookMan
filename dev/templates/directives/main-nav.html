@@ -1,5 +1,5 @@
-<a href="#" class="btn-menu {{class}}">open menu</a>
-<nav class="top-nav top-nav-mobile {{class}}">
+<button class="btn-menu" ng-click="openMenu()" ng-class="{ active: isActiveClass}">open menu</button>
+<nav class="top-nav top-nav-mobile" ng-class="{ active: isActiveClass}">
     <ul>
         <li ng-class="{ active: isActive('/books') }" ><a ng-href="#/books">home</a></li>
 
