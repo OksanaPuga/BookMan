@@ -8,12 +8,7 @@ $book-m-height: 500px;
 //tablets & larger smartphones
 @media screen and (max-width: 767px) {
     
-    ///////////////////////// this shoud be deleted, used with temporary reasons
-    .content .container .wrap-aside,
-    .content .container .aside-link {
-        display: none !important;
-    }
-    /////////////////////////////////////////////////
+    
     
     
     header .container {
