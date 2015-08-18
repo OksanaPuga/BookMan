@@ -1,5 +1,5 @@
 <open-aside-btn></open-aside-btn>
-<div class="container">
+<div class="container tablet mobile">
     <div class="wrap-aside">
         <aside>
 
@@ -14,13 +14,13 @@
 
 
 
-    <section class="main-content">
-        <section id="book-details">
+    <section class="main-content tablet mobile">
+        <section id="book-details" class="tablet mobile">
 
             <div details-flags></div>
 
-            <section id="book-info" ng-show="isCurrent('info')">
-                <img class="cover" ng-src="{{book.image}}" alt="book cover">
+            <section id="book-info" class="tablet mobile" ng-show="isCurrent('info')">
+                <div class="cover-wrap"><img class="cover" ng-src="{{book.image}}" alt="book cover"></div>
                 <div class="info-categories">
                     <p class="author" ng-show="book.author">{{book.author}}</p>
                     <p class="title" ng-show="book.title">{{book.title}}</p>

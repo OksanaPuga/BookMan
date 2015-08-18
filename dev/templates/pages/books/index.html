@@ -11,14 +11,12 @@
     </div>
 
 
-    <section class="main-content">
-        <section id="book-list">
+    <section class="main-content tablet mobile">
+        <section id="book-list" class="tablet mobile">
 
             <article class="new-book-btn">
                 <div class="back">
-                    <a ng-href="#/add">
-                        <div class="manually-btn btn positive">manually</div>
-                    </a>
+                    <a ng-href="#/add" class="manually-btn btn positive">manually</a>
                     <a ng-href="#/search" class="search-book-btn btn positive">search</a>
                 </div>
                 <div class="front">
@@ -30,6 +28,7 @@
             <article class="book-instance" ng-repeat="book in books | filter:typedFilter ">
                 <a ng-href="#/books/{{book.id}}/info">
                     <div class="back">
+                        <div class="more-info-btn"></div>
                         <p class="book-author">{{book.author}}</p>
                         <p class="book-name">{{book.title}}</p>
                         <p class="review" ng-show="book.review">Review</p>
@@ -40,6 +39,14 @@
                         </div>
                     </div>
                     <div class="front">
+                       <div class="more-info-box">
+                        <p class="review" ng-show="book.review">Review</p>
+                        <p class="quotes">Quotes: {{book.quotesAmount}}</p>
+                        <p class="notes">Notes: {{book.notesAmount}}</p>
+                        <div class="rate" ng-show="{{book.rate.length > 1}}">
+                            <img src="images/star.png" alt="" ng-repeat="star in book.rate">
+                        </div>
+                    </div>
                         <img ng-src="{{book.image}}" alt="Book cover">
                     </div>
                 </a>

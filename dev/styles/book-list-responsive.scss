@@ -1,0 +1,448 @@
+$book-t-width: calc(50% - 20px);
+$book-t-height: 320px;
+$book-m-height: 500px;
+
+//laptops & tablets
+@media screen and (max-width: 1023px) {
+}
+//tablets & larger smartphones
+@media screen and (max-width: 767px) {
+    
+    ///////////////////////// this shoud be deleted, used with temporary reasons
+    .content .container .wrap-aside,
+    .content .container .aside-link {
+        display: none !important;
+    }
+    /////////////////////////////////////////////////
+    
+    
+    header .container {
+        padding: 0 20px;
+    }
+    
+    ///////////////////////////////////////////////// Book-list tablet
+    #book-list {
+         margin: auto;
+         max-width: 500px;
+        .new-book-btn {
+            width: $book-t-width;
+            height: $book-t-height;
+            margin: 10px 10px 10px 0;
+            border: none;
+            .front,
+            .back {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+            .front {
+                top: -100%;
+                img {
+                    margin-top: 80px;
+                    width: 80px;
+                    height: 80px;
+                }
+                p {
+                    font-size: 35px;
+                }
+            }
+            .back {
+                padding: 20px;
+            }
+            .btn {
+                border-radius: 0;
+                background: none;
+                width: 100%;
+                height: 50%;
+                color: $colorA;
+                font-size: 25px;
+                text-transform: uppercase;
+                padding: 45px 0;
+                margin: 0;
+                font-weight: bold;
+            }
+            .search-book-btn {
+                border-top: 2px solid $color2;
+                padding-top: 60px;
+            }
+        }
+        .new-book-btn:hover {
+            .front {
+                transform: translateX(-100%);
+            }
+        }
+        
+        .book-instance {
+            width: $book-t-width;
+            height: $book-t-height;
+            .front,
+            .back,
+            .front img {
+                width: 100%;
+                height: 100%;
+            }
+            .front {
+                top: -$book-t-height;
+            }
+            .more-info-btn {
+                position: absolute;
+                right: 30px;
+                top: -30px;
+                width: 60px;
+                height: 60px;
+                border-radius: 100%;
+                background: $colorA;
+                box-shadow: 2px 2px 1px darkgreen;
+            }
+            .back {
+                padding: 20px;
+                position: relative;
+                z-index: 1;
+                height: 100px;
+                margin-top: 220px;
+                text-align: left;
+                .book-author {
+                    font-size: 18px;
+                    border-top: none;
+                }
+                .book-name {
+                    font-size: 18px;
+                    border-bottom: none;
+                    text-transform: uppercase;
+                }
+                .review, .quotes, .notes, .rate {
+                    display: none;
+                }
+            }
+            .more-info-box {
+                display: block;
+                position: absolute;
+                background: rgba(0,0,0,.5);
+                width: 100%;
+                color: white;
+                height: calc(#{$book-t-height} - 100px);
+                top: -220px;
+                text-align: center;
+                padding: 70px 20px;
+                font-size: 24px;
+            }
+        }
+        .book-instance:nth-child(2n) {
+            margin: 10px 0 10px 10px;
+        }
+        .book-instance:nth-child(2n + 1) {
+            margin: 10px 10px 10px 0;
+        }
+    }
+    
+
+    ///////////////////////////////////// Book-info tablet
+
+    #book-details.tablet {
+        width: calc(100% - 30px);
+        min-height: 100%;
+
+        .flags {
+            height: 40px;
+            width: 100%;
+
+            .flag {
+                height: 100%;
+                width: calc(100% / 3);
+                padding-top: 5px;
+                font-size: 20px;
+                font-weight: bold;
+            }
+            .info-flag, 
+            .abstr-flag {
+                border-right: 0;
+            }
+            .info-flag {
+                border-top-left-radius: 0;
+            }
+            .cont-flag {
+                border-top-right-radius: 0;
+            }
+        }
+
+
+        #book-info {
+            font-size: 18px;
+            .cover {
+                width: 45%;
+                height: auto;
+            }
+            p {
+                margin-bottom: 3px;
+            }
+            .info-categories {
+                margin-left: 0;
+            }
+            .author {
+                padding-top: 0;
+                border-top: none;
+            }
+            .title {
+                border-bottom: none;
+            }
+            .rate {
+                margin: 20px 0 15px 0;
+                text-align: center;
+            }
+
+            .description {
+                clear: both;
+                font-size: 18px;
+            }
+        }
+    }
+
+
+    //////////////////////////////////// Abstract tablet
+    #book-abstract {
+        min-height: 100%;
+        .abstr-items {
+            clear: both;
+        }
+        textarea {
+            height: 80px;
+            font-size: 18px;
+        }
+        .add-abstr-btn {
+            height: 115px;
+            padding-top: 28px;
+        }
+        label {
+            height: 30px;
+            p {
+                height: 35px;
+                font-size: 20px;
+            }
+        }
+        .no-content-massage {
+            padding-top: 100px;
+            font-size: 28px;
+        }
+        article {
+            font-size: 18px;
+            border-top: 1px solid $color2;
+            .btn-box {
+                display: none;
+                margin-top: 0;
+                padding: 10px 15px;
+                background: $color2;
+                .btn {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 100%;
+                    background: $colorA;
+                    color: $color3;
+                    margin-top: -35px;
+                    .btn-name {
+                        display: none;
+                    }
+                }
+                .positive {
+                    margin-right: 20px;
+                }
+                .negative {
+                    background: $colorB;
+                    color: $color3;
+                    margin-right: 20px;
+                }
+            }
+        }
+        article:hover {
+            background: $color3;
+        }
+       
+        article.quote.opened, 
+        article.note.opened,
+        article.review.opened {
+            background: $color3;
+            .btn-box {
+                display: block;
+            }
+        }
+        
+        article.review {
+            border-top: 1px solid $color2;
+            border-bottom: none;
+        }
+    }
+    
+}
+//smaller smartphones
+@media screen and (max-width: 480px) {
+    
+    .content .container .main-content.mobile {
+        width: 100%;
+        height: 100%;
+        padding: 10px;
+    }
+    
+    ///////////////////////////////////// Book-list mobile
+    #book-list.mobile {
+        width: 100%;
+        min-height: 100%;
+        .new-book-btn {
+            width: 320px;
+            float: none;
+            margin: 0 auto;
+            height: $book-m-height;
+            .front {
+                img {
+                    margin-top: 130px;
+                    width: 150px;
+                    height: 150px;
+                }
+                p {
+                    font-size: 60px;
+                }
+            }
+            .back {
+                padding: 60px;
+            }
+            .btn {
+                font-size: 45px;
+                padding: 55px 0;
+                margin: 0;
+            }
+            .search-book-btn {
+                border-top: 3px solid $color2;
+                padding-top: 100px;
+            }
+        }
+        
+        .book-instance {
+            width: 320px;
+            float: none;
+            margin: 0 auto;
+            height: $book-m-height;
+            .front,
+            .back,
+            .front img {
+                width: 100%;
+                height: 100%;
+            }
+            .more-info-btn {
+                right: 30px;
+                top: -60px;
+                width: 100px;
+                height: 100px;
+                box-shadow: 2px 3px 2px 1px darkgreen;
+            }
+            .back {
+                padding: 25px 40px;
+                height: 170px;
+                margin-top: calc(#{$book-m-height} - 170px);
+                .book-author {
+                    font-size: 28px;
+                }
+                .book-name {
+                    font-size: 30px;
+                }
+            }
+            .more-info-box {
+                height: calc(#{$book-m-height} - 170px);
+                top: -380px;
+                padding: 135px 20px;
+                font-size: 42px;
+            }
+            .front {
+                top: -$book-m-height;
+            }
+        }
+        .book-instance:nth-child(2n) {
+            margin: 15px auto;
+        }
+        .book-instance:nth-child(2n + 1) {
+            margin: 15px auto;
+        }
+        .book-instance:hover {
+            .front {
+                transform: none;
+            }
+        }
+
+    }
+
+
+    //////////////////////////////////// Book-info mobile
+    #book-details.mobile {
+        width: 100%;
+        min-height: 100%;
+
+        #book-info.mobile {
+            padding: 30px;
+            font-size: 25px;
+            .cover-wrap {
+                margin: -30px -30px 30px -30px;
+                max-height: 200px;
+                overflow: hidden;
+            }
+            .cover {
+                width: 100%;
+                height: auto;
+            }
+            .author {
+                font-size: 30px;
+            }
+            .title {
+                font-size: 35px;
+                margin-bottom: 20px;
+            }
+            .description {
+                margin-top: 15px;
+                font-size: 23px;
+                .category {
+                    font-size: 22px;
+                }
+            }
+        }
+    }
+
+    //////////////////////////////////// Abstract mobile
+    #book-abstract.mobile, #book-content.mobile {
+        min-height: 100%;
+        padding: 20px;
+        .add-abstr-section {
+            width: calc(100% + 40px);
+            margin: -20px -20px 30px -20px;
+            textarea {
+                width: 100%;
+                height: 100px;
+                border: none;
+                padding-right: 90px;
+            }
+            .btn {
+                position: absolute;
+                right: 20px;
+                margin-top: 15px;
+                width: 70px;
+                height: 70px;
+                padding-top: 5px;
+                border-radius: 100%;
+            }
+        }
+        label {
+            width: calc(100% / 3);
+        }
+        article {
+            font-size: 23px;
+        }
+        article.opened {
+            background: $color3;
+        }
+        article.review {
+            border-top: 1px solid $color2;
+            border-bottom: 1px solid $color2;
+        }
+    }
+
+    .no-content-message {
+        padding-top: 50px;
+        font-size: 30px;
+    }
+    
+}

@@ -24,7 +24,7 @@ span.accent {
     color: $color3;
     padding: 0 7px;
 }
-p.no-content-massage {
+p.no-content-message {
     font-size: 20px;
     font-family: $font3;
     color: $color2;
@@ -288,6 +288,12 @@ aside {
 .book-instance:hover {
     cursor: pointer;
 }
+
+.more-info-box {
+    display: none;
+}
+
+
 // view with book info, abstract and content
 #book-details {
     background: $color3;

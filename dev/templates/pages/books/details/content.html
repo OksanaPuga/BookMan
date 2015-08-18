@@ -13,13 +13,13 @@
 
 
 
-    <section class="main-content">
-        <section id="book-details">
+    <section class="main-content tablet mobile">
+        <section id="book-details" class="tablet mobile">
 
             <div details-flags></div>
 
-            <section id="book-content" ng-show="isCurrent('cont')">
-                Here will be content of the book. Coming soon...
+            <section id="book-content" class="tablet mobile" ng-show="isCurrent('cont')">
+                <p class="no-content-message">Here will be content of the book. Coming soon...</p>
             </section>
 
         </section>

@@ -1,5 +1,5 @@
 <open-aside-btn></open-aside-btn>
-<div class="container" ng-click="closeAbstracts($event)">
+<div class="container">
     <div class="wrap-aside">
         <aside>
             <edit-delete-btn></edit-delete-btn>
@@ -13,15 +13,16 @@
 
 
 
-    <section class="main-content">
-        <section id="book-details">
+    <section class="main-content mobile">
+        <section id="book-details" class="tablet mobile">
 
             <div details-flags></div>
 
-            <section id="book-abstract" ng-show="isCurrent('abstr')">
-                <div class="add-abstr-section">
+            <section id="book-abstract" class="tablet mobile" ng-show="isCurrent('abstr')">
+                <div class="add-abstr-section clearfix">
                     <textarea id="abst-area" placeholder="add a new quote, note or review" ng-model="abstrItemToAdd.content"></textarea>
-                    <label for="">
+                    <div class="btn positive add-abstr-btn" ng-click="addAbstrItem()">+</div>
+                       <label for="">
                         <input type="radio" value="quote" name="abstr-type" ng-model="abstrItemToAdd.type">
                         <p>quote</p>
                     </label>
@@ -34,26 +35,37 @@
                         <p>review</p>
                     </label>
                 </div>
-                <div class="btn positive add-abstr-btn" ng-click="addAbstrItem()">+</div>
 
                 <article class="review" ng-show="book.review && typesToShow.review" ng-click="toggleButtons($event)">
-                    <p>Review</p>
-                    <p>{{book.review}}</p>
+                    <div class="item-body">
+                        <p>Review</p>
+                        <p>{{book.review}}</p>
+                    </div>
                     <div class="btn-box clearfix">
-                        <div class="btn positive" ng-click="editReview()">edit</div>
-                        <div class="btn negative" ng-click="deleteReview()">delete</div>
+                        <div class="btn positive" ng-click="editReview()">
+                            <span class="btn-name">edit</span>
+                        </div>
+                        <div class="btn negative" ng-click="deleteReview()">
+                            <span class="btn-name">delete</span>
+                        </div>
                     </div>
                 </article>
 
                 <div class="abstr-items">
-                    <p class="no-content-massage" ng-hide="book.abstractItems.length || book.review">
+                    <p class="no-content-message" ng-hide="book.abstractItems.length || book.review">
                         Your abstract is empty yet. Add some quotes, notes and wright a review!
                     </p>
                     <article ng-repeat="item in book.abstractItems | abstractFilter:typesToShow track by $index" class="{{item.type}}" ng-click="toggleButtons($event)">
-                        {{item.content}}
+                        <div class="item-body">
+                            <span>{{item.content}}</span>
+                        </div>
                         <div class="btn-box clearfix">
-                            <div class="btn positive" ng-click="editAbstrItem($index)">edit</div>
-                            <div class="btn negative" ng-click="deleteAbstrItem($index)">delete</div>
+                            <div class="btn positive" ng-click="editAbstrItem($index)">
+                                <span class="btn-name">edit</span>
+                            </div>
+                            <div class="btn negative" ng-click="deleteAbstrItem($index)">
+                                <span class="btn-name">delete</span>
+                            </div>
                         </div>
                     </article>
                 </div>
