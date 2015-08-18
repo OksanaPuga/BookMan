@@ -159,36 +159,6 @@ body>header {
         cursor: pointer;
         color: $colorB;
     }
-    .top-nav {
-        li {
-            list-style: none;
-            border-right: 1px solid $color3;
-            padding: 2px 10px 5px;
-            transition: $buttons-transition-time;
-            a {
-                color: $color3;
-                text-decoration: initial;
-                display: block;
-                width: 100%;
-                max-height: 100%;
-            }
-        }
-        li:hover {
-            background: $color3;
-            a {
-                color: $color0;
-            }
-        }
-        li.active {
-            background: $color3;
-            a {
-                color: $color0;
-            }
-        }
-        li:last-child {
-            border-right: none;
-        }
-    }
     .logged-user {
         padding: 5px 12px;
         border: 2px solid $color3;
@@ -198,6 +168,36 @@ body>header {
     .logged-user:hover {
         background: $color3;
         color: $color0;
+    }
+}
+.top-nav {
+    li {
+        list-style: none;
+        border-right: 1px solid $color3;
+        padding: 2px 10px 5px;
+        transition: $buttons-transition-time;
+        a {
+            color: $color3;
+            text-decoration: initial;
+            display: block;
+            width: 100%;
+            max-height: 100%;
+        }
+    }
+    li:hover {
+        background: $color3;
+        a {
+            color: $color0;
+        }
+    }
+    li.active {
+        background: $color3;
+        a {
+            color: $color0;
+        }
+    }
+    li:last-child {
+        border-right: none;
     }
 }
 aside {

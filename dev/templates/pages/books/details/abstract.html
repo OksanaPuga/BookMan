@@ -1,16 +1,17 @@
-<open-aside-btn></open-aside-btn>
-<div class="container" ng-click="closeAbstracts($event)">
-    <div class="wrap-aside">
+<div class="container">
+    <modal-backdrop></modal-backdrop>
+    <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <edit-delete-btn></edit-delete-btn>
+            <div class = "aside-scroll">
+                <main-nav></main-nav>
+                <edit-delete-btn></edit-delete-btn>
 
-            <quick-statistics></quick-statistics>
+                <quick-statistics></quick-statistics>
 
-            <filter-abstract></filter-abstract>
-
+                <filter-abstract></filter-abstract>
+            </div>
         </aside>
     </div>
-
 
 
     <section class="main-content">
