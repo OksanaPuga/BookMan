@@ -1,17 +1,18 @@
-<open-aside-btn></open-aside-btn>
+
 <div class="container">
-    <div class="wrap-aside">
+    <modal-backdrop></modal-backdrop>
+    <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <edit-delete-btn></edit-delete-btn>
+            <div class = "aside-scroll">
+                <main-nav></main-nav>
+                <edit-delete-btn></edit-delete-btn>
 
-            <quick-statistics></quick-statistics>
+                <quick-statistics></quick-statistics>
 
-            <filter-abstract></filter-abstract>
-
+                <filter-abstract></filter-abstract>
+            </div>
         </aside>
     </div>
-
-
 
     <section class="main-content mobile">
         <section id="book-details" class="tablet mobile">

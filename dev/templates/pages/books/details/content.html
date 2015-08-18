@@ -1,16 +1,18 @@
-<open-aside-btn></open-aside-btn>
+
 <div class="container">
-    <div class="wrap-aside">
+    <modal-backdrop></modal-backdrop>
+    <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <edit-delete-btn></edit-delete-btn>
+            <div class = "aside-scroll">
+                <main-nav></main-nav>
+                <edit-delete-btn></edit-delete-btn>
 
-            <added-modified></added-modified>
+                <added-modified></added-modified>
 
-            <random-quote></random-quote>
-
+                <random-quote></random-quote>
+            </div>
         </aside>
     </div>
-
 
 
     <section class="main-content tablet mobile">
