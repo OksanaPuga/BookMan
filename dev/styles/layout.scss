@@ -40,30 +40,23 @@ section {
         width: $aside-width;
         position: relative;
         z-index: 5;
-        padding: 0px 10px;
+        padding-right:30px;
         -webkit-transition: all .3s;
         transition: all .3s;
+        .btn-menu {
+            display: none;
+        }
+        .top-nav {
+            display: none;
+        }
     }
     .main-content {
         width: $container-width - $aside-width;
         display: table-cell;
         vertical-align: top;
-        padding: 30px 0 30px 0px;
+        padding: 30px 0;
     }
-    .wrap-aside+.main-content {
-        padding: 30px 0 30px 30px;
-    }
-    .aside-link {
-        display: none;
-    }
-}
-.content.active {
-    .wrap-aside {
-        width: 10px;
-        aside {
-            margin-left: -$aside-width*2;
-        }
-    }
+   
 }
 aside {
     height: 100%;

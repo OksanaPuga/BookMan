@@ -1,12 +1,12 @@
-<open-aside-btn></open-aside-btn>
 <div class="container">
-    <div class="wrap-aside">
+    <modal-backdrop></modal-backdrop>
+    <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-
-            <book-search-section></book-search-section>
-
-            <statistics-section></statistics-section>
-
+            <div class = "aside-scroll">
+                <main-nav></main-nav>
+                <book-search-section></book-search-section>
+                <statistics-section></statistics-section>
+            </div>
         </aside>
     </div>
 
