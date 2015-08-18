@@ -3,22 +3,21 @@
     padding: 40px 35px;
     color: $color0;
     .add-abstr-section {
-        float: left;
-        width: calc(100% - 50px);
-        border: 2px solid $color1;
-        border-right: none;
+        width: 100%;
         border-top-left-radius: 5px;
-        border-bottom-left-radius: 5px;
-        padding: 5px 15px 5px 5px;
-        background: $color4;
         margin-bottom: 40px;
     }
     textarea {
         padding: 10px;
-        width: 100%;
-        height: 50px;
+        float: left;
+        width: calc(100% - 60px);
+        height: 60px;
         resize: none;
-        border: none;
+        border: 1px solid $color2;
+        border-bottom: none;
+        border-radius: 0;
+        border-top-left-radius: 5px;
+        border-right: none;
         font-family: $font1;
         background: $color4;
         font-size: 16px;
@@ -26,42 +25,46 @@
     }
     .add-abstr-btn {
         float: right;
-        width: 50px;
-        height: 93px;
-        padding-top: 21px;
+        width: 60px;
+        height: 90px;
+        padding-top: 18px;
+        font-size: 40px;
         border-bottom-left-radius: 0;
         border-top-left-radius: 0;
-        font-size: 35px;
         font-weight: bold;
     }
     label {
         display: block;
         float: left;
-        height: 25px;
-        margin-right: 5px;
-        width: calc((100% - 10px) / 3);
+        height: 30px;
+        width: calc((100% - 60px) / 3);
         p {
             text-align: center;
-            height: 25px;
-            border: 1px solid $color1;
-            border-radius: 2px;
-            color: $color1;
+            height: 30px;
+            background: $color4;
+            color: $colorA;
             font-size: 16px;
+            font-weight: bold;
             transition: $buttons-transition-time;
+            border-bottom: 1px solid $color2;
         }
     }
     label:hover {
         cursor: pointer;
     }
-    label:last-of-type {
-        margin-right: 0;
+    label:first-of-type p {
+        border-bottom-left-radius: 5px;
+        border-left: 1px solid $color2;
+    }
+    label:last-of-type p {
+        
     }
     input {
         display: none;
     }
     input:checked + p {
-        color: $colorB;
-        border-color: $colorB;
+        color: $colorA;
+        border-bottom: 4px solid $colorA;
     }
     .abstr-items {
         clear: both;
@@ -71,10 +74,14 @@
     }
     article {
         transition: $buttons-transition-time;
-        margin-bottom: 10px;
+        border-top: 1px solid $color2;
+        .item-body {
+            padding: 15px 10px;
+        }
         .btn-box {
             display: none;
             margin-top: 20px;
+            padding: 0 15px 15px 0;
             font-weight: normal;
             font-family: $font1;
             .btn {
@@ -100,13 +107,17 @@
     }
     article.opened {
         background: $color2;
+        .btn-box {
+            display: block;
+        }
     }
     article.review {
         clear: both;
         border-top: 3px solid $color2;
         border-bottom: 3px solid $color2;
-        padding: 0 23px 20px 28px;
-        margin-bottom: 30px;
+        .item-body {
+            padding: 0 23px 20px 28px;
+        }
         p {
             padding: 5px 0;
             font-family: $font3;
@@ -129,15 +140,26 @@
         border-bottom: 1px solid $color1;
     }
     article.quote {
-        border-left: 8px solid $color2;
-        padding: 15px 10px 15px 21px;
         font-weight: bolder;
-    }
-    article.quote:hover {
-        border-left: 8px solid $color1;
+        .item-body {
+            padding: 20px 25px 35px 17px;
+        }
+        span:before {
+            content: '“';
+            float: left;
+            font-size: 50px;
+            margin-right: 10px;
+            color: $color2;
+        }
+        span:after {
+            content: '”';
+            float: right;
+            font-size: 50px;
+            margin-left: 10px;
+            color: $color2;
+        }
     }
     article.note {
-        padding: 10px 10px 10px 29px;
         font-family: $font3;
         font-size: 15px;
     }

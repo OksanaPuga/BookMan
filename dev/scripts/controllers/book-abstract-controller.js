@@ -43,24 +43,14 @@ angular.module('bookman')
             }
         };
 
-        $scope.closeAbstracts = function ($event) {
-            var target = $event.target;
-
-            if (!$(target).hasClass('review') && !$(target).hasClass('quote') && !$(target).hasClass('note')) {
-                $('article').find('.btn-box').hide();
-                $('article').removeClass('opened');
-            }
-        }
-
         $scope.toggleButtons = function ($event) {
-            var target = $event.target;
+            var target = $event.currentTarget;
+            console.log(target);
 
             if (!$(target).hasClass('opened')) {
-                $('article').find('.btn-box').hide();
                 $('article').removeClass('opened');
             }
-            $($event.currentTarget).find('.btn-box').toggle();
-            $($event.currentTarget).toggleClass('opened');
+            $(target).toggleClass('opened');
         };
 
 
@@ -121,6 +111,9 @@ angular.module('bookman')
             $scope.abstrItemToAdd.type = $scope.book.abstractItems[$index].type;
             $scope.abstrItemToAdd.content = $scope.book.abstractItems[$index].content;
             $scope.abstrItemToAdd.index = $index;
+            
+            window.scrollTo(0,0);
+            $('textarea').focus();
 
             $scope.updateBookAbstr();
         };
@@ -139,6 +132,9 @@ angular.module('bookman')
         $scope.editReview = function () {
             $scope.abstrItemToAdd.type = 'review';
             $scope.abstrItemToAdd.content = $scope.book.review;
+            
+            window.scrollTo(0,0);
+            $('textarea').focus();
 
             $scope.updateBookAbstr();
         };
