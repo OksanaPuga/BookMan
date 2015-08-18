@@ -21,21 +21,6 @@
 	}
 	body>header{
 		z-index: 1000;
-		.top-nav-mobile {
-			width:100%;
-			background: $color0;
-			ul {
-				margin-right: 0;
-				padding: 10px 0;
-			}
-			li{
-				width:100%;
-				border: none;
-				border-bottom: 1px solid $color3;
-				padding: 10px 0;
-				text-align: center;
-			}
-		}
 		.btn-menu{
 			display: block;
 			border:0;
