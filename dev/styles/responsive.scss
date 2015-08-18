@@ -69,6 +69,7 @@
 			left:0;
 			top:$header-height;
 			height: 100%;
+			padding: 0;
 
        		.top-nav {
             	display: block;
@@ -88,18 +89,14 @@
 		}
 
 		aside{
-			position: absolute;
-			overflow:hidden;		
+			display: block;
+			overflow-y: auto;		
 			height: 100%;
-			margin: 0;
 			left: 10px;
 			top: 0;
+			padding: 10px;
 		}
-		.aside-scroll {
-			float: left;
-			overflow-y: auto;
-			width: 100%;
-		}
+		
 
 	}
 	//end layout
