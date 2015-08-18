@@ -1,4 +1,5 @@
 angular.module('bookman').controller('SearchController', ['$scope', '$http', 'Books', 'Book', function ($scope, $http, Books, Book) {
+	$scope.books = Books.getAllBooks();
 	$scope.submitSearch = function (form) {
 		if (form.$valid) {
 			var url;
@@ -36,6 +37,7 @@ angular.module('bookman').controller('SearchController', ['$scope', '$http', 'Bo
 						$scope.tempBooks[index].isAdded = true;  				
 						var newBook = new Book(book);
 						newBook.save();
+						$scope.books = Books.getAllBooks();
 					}
 					$scope.noResults = false;
 				} else {
