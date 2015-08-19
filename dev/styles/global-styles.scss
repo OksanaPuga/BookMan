@@ -41,6 +41,7 @@ span.accent {
     color: $color3;
     padding: 0 7px;
     font-weight: bolder;
+    white-space: nowrap;
 }
 p.no-content-message {
     font-size: 20px;
@@ -361,9 +362,4 @@ aside {
             background: $color3;
         }
     }
-}
-header.about {
-    color: #fff;
-    margin-bottom: 10%;
-    text-align: center;
 }

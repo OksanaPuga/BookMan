@@ -17,7 +17,7 @@ angular.module('bookman').controller('SearchController', ['$scope', '$http', 'Bo
 						obj = {
 							id: elm.id,
 							title: elm.volumeInfo.title,
-							author: elm.volumeInfo.authors||"",
+							author: angular.isArray(elm.volumeInfo.authors) ? elm.volumeInfo.authors.join(', ') : elm.volumeInfo.authors || "",        
 							image: elm.volumeInfo.imageLinks ? elm.volumeInfo.imageLinks.thumbnail : Books.defaultcover,
 							publisher: elm.volumeInfo.publisher,
 							publicationDate: elm.volumeInfo.publishedDate,
