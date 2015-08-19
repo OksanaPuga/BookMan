@@ -1,36 +1,27 @@
 $book-t-width: calc(50% - 15px);
 $book-t-height: 320px;
-$book-m-height: 500px;
+$book-m-height: 400px;
 
 //laptops & tablets
 @media screen and (max-width: 1023px) {
-}
-//tablets & larger smartphones
-@media screen and (max-width: 767px) {
-    
-    
-    
-    
+
     header .container {
         padding: 0 30px;
     }
-    .logo-and-name {
-        position: absolute;
-        left: 100px;
+    
+    aside {
+        margin-top: -30px;
     }
-    .logo-and-name img {
-        display: none;
-    }
+    
     
     ///////////////////////////////////////////////// Book-list tablet
     #book-list {
-        padding-left: 10px;
-         margin: auto;
-         max-width: 500px;
+        margin: auto;
+        max-width: 500px;
         .new-book-btn {
             width: $book-t-width;
             height: $book-t-height;
-            margin: 10px 10px 10px 0;
+            margin: 0 10px 10px 0;
             border: none;
             .front,
             .back {
@@ -136,11 +127,36 @@ $book-m-height: 500px;
         .book-instance:nth-child(2n + 1) {
             margin: 10px 10px 10px 0;
         }
+        .book-instance:nth-child(2) {
+            margin: 0 0 10px 10px;
+        }
         .book-instance:hover {
             .front {
                 transform: none;
             }
         }
+    }
+    #book-list.search-results {
+        padding-top: 10px; 
+        .book-instance:nth-child(2) {
+            margin: 10px 0 10px 10px;
+        }
+    }
+
+    .search-form {
+        margin-left: 0;
+    }
+
+    .icon-added {
+        position: absolute;
+        top: -222px;
+        right: 30px;
+        height: 90px;
+        width: 45px;
+        text-align: center;
+        border-radius: 2px;
+        padding-top: 30px;
+        box-shadow: 2px 2px 1px darkgreen;
     }
     
 
@@ -283,7 +299,10 @@ $book-m-height: 500px;
 
     //////////////////////////////////// Edite page tablet
     #book-editing {
-        
+        .cover-box {
+            margin: 0 auto 30px;
+            float: none;
+        }
         input {
             width: 100%;
         }
@@ -302,12 +321,50 @@ $book-m-height: 500px;
         top: -30px;
         right: 25px;
         position: absolute;
+        border: none;
+        box-shadow: 2px 2px 1px darkgreen;
         span {
             display: none;
         }
     }
     
+
 }
+//tablets & larger smartphones
+@media screen and (max-width: 767px) {
+    .logo-and-name {
+        position: absolute;
+        left: 100px;
+    }
+    .logo-and-name img {
+        display: none;
+    }
+    aside {
+        margin-top: 0;
+    }
+    #book-list {
+        padding-left: 10px;
+    }
+    .new-book-btn {
+        margin: 10px 10px 10px 0;
+    }
+    .book-instance:nth-child(2) {
+        margin: 10px 0 10px 10px;
+    }
+    
+    #book-editing {
+        .cover-box {
+            margin: 0 auto 30px;
+            float: none;
+        }
+    }
+    .search-form {
+        margin-left: 10px;
+    }
+    
+}
+    
+    
 //smaller smartphones
 @media screen and (max-width: 480px) {
     
@@ -321,41 +378,41 @@ $book-m-height: 500px;
     }
     
     ///////////////////////////////////// Book-list mobile
-    #book-list.mobile {
+    #book-list.mobile, #book-list.search-results {
         width: 100%;
         min-height: 100%;
         padding-left: 0;
         .new-book-btn {
-            width: 320px;
+            width: 280px;
             float: none;
             margin: 0 auto;
             height: $book-m-height;
             .front {
                 img {
-                    margin-top: 130px;
-                    width: 150px;
-                    height: 150px;
+                    margin-top: 110px;
+                    width: 100px;
+                    height: 100px;
                 }
                 p {
-                    font-size: 60px;
+                    font-size: 40px;
                 }
             }
             .back {
                 padding: 60px;
             }
             .btn {
-                font-size: 35px;
-                padding: 55px 0;
+                font-size: 25px;
+                padding: 30px 0;
                 margin: 0;
             }
             .search-book-btn {
                 border-top: 3px solid $color2;
-                padding-top: 100px;
+                padding-top: 80px;
             }
         }
         
         .book-instance {
-            width: 320px;
+            width: 280px;
             float: none;
             margin: 0 auto;
             height: $book-m-height;
@@ -367,24 +424,24 @@ $book-m-height: 500px;
             }
             .more-info-btn {
                 right: 30px;
-                top: -60px;
-                width: 100px;
-                height: 100px;
+                top: -35px;
+                width: 70px;
+                height: 70px;
                 box-shadow: 2px 3px 2px 1px darkgreen;
             }
             .back {
-                padding: 25px 40px;
-                height: 170px;
-                margin-top: calc(#{$book-m-height} - 170px);
+                padding: 17px 20px;
+                height: 130px;
+                margin-top: calc(#{$book-m-height} - 130px);
                 .book-author {
-                    font-size: 28px;
+                    font-size: 20px;
                 }
                 .book-name {
-                    font-size: 30px;
+                    font-size: 22px;
                 }
             }
             .more-info-box {
-                height: calc(#{$book-m-height} - 170px);
+                height: calc(#{$book-m-height} - 130px);
                 top: -380px;
                 padding: 135px 20px;
                 font-size: 42px;
@@ -412,6 +469,33 @@ $book-m-height: 500px;
     #book-details.mobile {
         width: 100%;
         min-height: 100%;
+        
+        .flags {
+            height: 48px;
+            width: 100%;
+
+            .flag {
+                height: 100%;
+                width: calc(100% / 3);
+                padding-top: 7px;
+                font-size: 20px;
+                font-weight: bold;
+                background: $color3;
+            }
+            .flag.active {
+                border-bottom: 8px solid $colorA;
+            }
+            .info-flag, 
+            .abstr-flag {
+                border-right: 0;
+            }
+            .info-flag {
+                border-top-left-radius: 0;
+            }
+            .cont-flag {
+                border-top-right-radius: 0;
+            }
+        }
 
         #book-info.mobile {
             padding: 30px;
@@ -487,10 +571,6 @@ $book-m-height: 500px;
 
     //////////////////// Editing mobile
     #book-editing {
-        .cover-box {
-            margin: 0 auto 30px;
-            float: none;
-        }
         label[for="rate"] {
             margin-left: 0;
             margin-top: 0;
@@ -501,8 +581,37 @@ $book-m-height: 500px;
         }
     }
 
-.random-quote {
-    display: none;
-}
+    .random-quote {
+        margin-top: 10px;
+    }
     
+    .added-modified-section {
+        margin-top: -20px;
+    }
+
+    .quick-stat-section {
+        margin-top: -30px;
+    }
+
+    .filter-abstr {
+        margin-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .statistics-section {
+        padding-top: 0;
+        margin-top: -10px;
+    }
+
+    .search-form {
+        margin: 0 -10px;
+        padding: 10px 20px;
+    }
+
+    .icon-added {
+        top: -272px;
+        right: 30px;
+        height: 115px;
+        width: 55px;
+    }
 }
