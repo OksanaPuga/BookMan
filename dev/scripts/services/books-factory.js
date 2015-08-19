@@ -2,8 +2,8 @@ angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
     var factory = {};
     factory.defaultcover = "images/The_Book_(Front_Cover).jpg";
     factory.init = function () {
-        var rawBooksArray = $http.get("https://www.googleapis.com/books/v1/users/114873229240336350134/bookshelves/0/volumes");
-        rawBooksArray.success(function (response) {
+        var promise = $http.get("https://www.googleapis.com/books/v1/users/114873229240336350134/bookshelves/0/volumes");
+        promise.success(function (response) {
             var book, elm, obj, appBooks = response.items;
             for (var property in appBooks) {
                 elm = appBooks[property];
@@ -22,18 +22,8 @@ angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
                 book.update();
             }
         });
+        return promise;
     };
-
-    //window.localStorage.clear();
-
-    console.log(localStorage.getItem('books'));
-
-    (function () {
-       if (!localStorage.getItem('books')) {
-            factory.init();
-        }
-    })();
-
 
     factory.getAllBooks = function () {
         return angular.fromJson(localStorage.getItem('books'));

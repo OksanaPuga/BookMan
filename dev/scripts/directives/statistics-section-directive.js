@@ -3,9 +3,8 @@ angular.module('bookman')
         return {
             restrict: 'E',
             templateUrl: 'templates/directives/statistics-section.html',
-            controller: function () {
-                this.books = Books.getAllBooks();
-            },
-            controllerAs: 'statSecCtrl'
+            controller: function ($scope) {
+                $scope.books = Books.getAllBooks();
+            }
         };
     }]);
