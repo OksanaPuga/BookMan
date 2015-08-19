@@ -6,23 +6,41 @@ body {
 p {
     margin: 0;
 }
-ul{
+ul, h1, h3{
     margin:0;
     padding:0;
+    list-style: none;
 }
 a {
     text-decoration: none;
 }
+h1{
+      font-family: "Roboto Slab";
+      font-size: 30px;
+      margin-bottom: 20px;
+}
+h3{
+      font-family: "Roboto Slab";
+      font-size: 30px;
+      margin-bottom: 10px;
+}
+
+
 // to prevent unexpected outlines in chrome
 *:focus {
     outline: 0;
 }
+.no-overflow {
+    overflow-x: hidden;
+}
 // text with orange background
 span.accent {
-    font-family: $font2;
+    font-family: $font3;
+    font-weight: bold;
     background: $colorB;
     color: $color3;
     padding: 0 7px;
+    font-weight: bolder;
 }
 p.no-content-message {
     font-size: 20px;
@@ -253,26 +271,27 @@ aside {
         background: $color4;
         text-align: center;
         color: $color0;
-        padding: 10px;
-        .book-author,
+        padding: 20px 15px;
         .book-name {
-            font-family: $font2, $font3, sans-serif;
+            font-family: $font2, sans-serif;
+            line-height: 19px;
             overflow: hidden;
         }
         .book-author {
-            font-size: 14px;
+            font-size: 15px;
             max-height: 40px;
+            font-family: $font3, sans-serif;
+            margin: 5px 0;
         }
         .book-name {
             font-weight: bold;
-            font-size: 18px;
-            padding-bottom: 16px;
+            font-size: 17px;
+            padding-bottom: 20px;
             margin-bottom: 10px;
             max-height: 110px;
             border-bottom: 2px solid $colorB;
         }
         .review {
-            padding-top: 5px;
             font-size: 14px;
         }
         .quotes {
@@ -280,7 +299,7 @@ aside {
         }
         .notes {
             font-size: 14px;
-            padding-bottom: 5px;
+            padding-bottom: 10px;
             border-bottom: 1px solid $colorB;
         }
         .rate {
@@ -299,6 +318,7 @@ aside {
 
 // view with book info, abstract and content
 #book-details {
+    max-width: 749px;
     background: $color3;
     border-radius: 3px;
     .flags {
@@ -310,7 +330,7 @@ aside {
         .flag {
             float: left;
             height: 100%;
-            width: ($container-width - $aside-width - $section-margin) / 3;
+            width: calc(100% / 3);
             text-align: center;
             padding-top: 5px;
             font-size: 18px;

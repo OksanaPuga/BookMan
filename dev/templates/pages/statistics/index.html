@@ -4,34 +4,42 @@
         <aside>
             <div class = "aside-scroll">
                 <main-nav></main-nav>
-                <div class="stat-info">
-                <p class="title">Your statistics:</p>
-                <p class="primary"><span class="accent">All books: {{statistics.amountBooks}}</span></p>
-                <p class="primary"><span class="accent">Quotes: {{statistics.quotesAmountAll}}</span></p>
+                <div class="white-block">
+                    <h3 class="title">Your statistics:</h3>
+                    <p class="primary"><span class="accent">All books: {{statistics.amountBooks}}</span></p>
+                    <p class="primary"><span class="accent">Quotes: {{statistics.quotesAmountAll}}</span></p>
 
-                <p class="secondary" ng-show="statistics.avarageQuotes > 0">Avarage amount of quotes per book:{{statistics.avarageQuotes}}</p>
-                <p class="secondary" ng-hide="statistics.avarageQuotes > 0">Amount of books which have quotes: {{statistics.sumBooksQuotes}}</p>
+                    <p class="secondary" ng-show="statistics.avarageQuotes > 0">Avarage amount of quotes per book:{{statistics.avarageQuotes}}</p>
+                    <p class="secondary" ng-hide="statistics.avarageQuotes > 0">Amount of books which have quotes: {{statistics.sumBooksQuotes}}</p>
 
-                <p class="primary"><span class="accent">Notes: {{statistics.notesAmountAll}}</span></p>
+                    <p class="primary"><span class="accent">Notes: {{statistics.notesAmountAll}}</span></p>
 
-                <p class="secondary" ng-show="statistics.avarageNotes > 0">Avarage amount of notes per book:{{statistics.avarageNotes}}</p>
-                <p class="secondary" ng-hide="statistics.avarageNotes > 0">Amount of books which have notes:{{statistics.sumBooksNotes}}</p>
+                    <p class="secondary" ng-show="statistics.avarageNotes > 0">Avarage amount of notes per book:{{statistics.avarageNotes}}</p>
+                    <p class="secondary" ng-hide="statistics.avarageNotes > 0">Amount of books which have notes:{{statistics.sumBooksNotes}}</p>
 
-                <p class="primary"><span class="accent">Reviews: {{statistics.reviewAmountAll}}</span></p>
+                    <p class="primary"><span class="accent">Reviews: {{statistics.reviewAmountAll}}</span></p>
+                </div>
             </div>
         </aside>
     </div>
 
 
-    <section class="main-content">
-        <div id="statistics" class="clearfix">
+    <section class="main-content mobile">
+        <div class="clearfix">
 
             <div class="message-books-img">
                 <div class="message">
-                    <p class="result">Your books have <span class="accent">{{booksHeight}}cm</span> height in sum.</p>
+<<<<<<< HEAD
+                    <p class="result">Your books have at least<span class="accent">{{booksHeight}}cm</span> height in sum.</p>
                     <p ng-show = "booksHeight < 30" class="level"><span class="important">Hey, it is higher then a <span class="accent">chicken !</span></span></p>
                     <p ng-show = "booksHeight < 150 && booksHeight > 30" class="level"><span class="important">Hey, it is higher then a <span class="accent">chicken 2 !</span></span></p>
                     <p ng-show = "booksHeight > 150" class="level"><span class="important">Hey, it is higher then a <span class="accent">chicken 3 !</span></span></p>
+=======
+                    <p class="result">Your books have <span class="accent">{{booksHeight}}cm</span> height in sum.</p>
+                    <p ng-show = "booksHeight < 30" class="level"><span class="important">Hey, it is higher then a</span><span class="accent">chicken !</span></p>
+                    <p ng-show = "booksHeight < 150 && booksHeight > 30" class="level"><span class="important">Hey, it is higher then a</span><span class="accent">chicken 2 !</span></p>
+                    <p ng-show = "booksHeight > 150" class="level"><span class="important">Hey, it is higher then a</span><span class="accent">chicken 3 !</span></p>
+>>>>>>> origin/master
                 </div>
                 <div class="books-img">
                     <div class="books">

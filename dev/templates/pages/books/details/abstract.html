@@ -15,7 +15,7 @@
     </div>
 
     <section class="main-content mobile">
-        <section id="book-details" class="tablet mobile">
+        <section id="book-details" class="no-overflow tablet mobile">
 
             <div details-flags></div>
 
@@ -40,7 +40,7 @@
                 <article class="review" ng-show="book.review && typesToShow.review" ng-click="toggleButtons($event)">
                     <div class="item-body">
                         <p>Review</p>
-                        <p>{{book.review}}</p>
+                        <p class="no-overflow">{{book.review}}</p>
                     </div>
                     <div class="btn-box clearfix">
                         <div class="btn positive" ng-click="editReview()">
@@ -57,7 +57,7 @@
                         Your abstract is empty yet. Add some quotes, notes and wright a review!
                     </p>
                     <article ng-repeat="item in book.abstractItems | abstractFilter:typesToShow track by $index" class="{{item.type}}" ng-click="toggleButtons($event)">
-                        <div class="item-body">
+                        <div class="item-body no-overflow">
                             <span>{{item.content}}</span>
                         </div>
                         <div class="btn-box clearfix">

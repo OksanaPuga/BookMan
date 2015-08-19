@@ -95,17 +95,18 @@
         
         .category {
             font-weight: bolder;
-            font-family: $font3;
+            font-family: $font2;
             margin-right: 5px;
         }
-        
-        .author, 
+         
         .title {
             font-family: $font2;
+            line-height: 25px;
         }
         .author {
+            font-family: $font3;
             padding-top: 7px;
-            margin-bottom: 0;
+            margin-bottom: 10px;
             border-top: 2px solid $colorB;
             font-size: 25px;
         }

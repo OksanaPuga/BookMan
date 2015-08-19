@@ -89,18 +89,18 @@ $book-m-height: 400px;
                 box-shadow: 2px 2px 1px darkgreen;
             }
             .back {
-                padding: 20px;
+                padding: 15px 20px;
                 position: relative;
                 z-index: 1;
                 height: 100px;
                 margin-top: 220px;
                 text-align: left;
                 .book-author {
-                    font-size: 18px;
+                    font-size: 17px;
                     border-top: none;
                 }
                 .book-name {
-                    font-size: 18px;
+                    font-size: 16px;
                     border-bottom: none;
                     text-transform: uppercase;
                 }
@@ -619,5 +619,12 @@ $book-m-height: 400px;
         right: 30px;
         height: 115px;
         width: 55px;
+    }
+
+
+    .white-block  {
+        .title {
+            font-size: 20px;
+        }
     }
 }

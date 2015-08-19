@@ -1,8 +1,4 @@
-// Here you can store all variables and then take to own files. 
-// Please if you change it, make changes in all files
-@import url(http://fonts.googleapis.com/css?family=Raleway:300,500,800);
-@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700&subset=latin,cyrillic);
-@import url(http://fonts.googleapis.com/css?family=Oswald:400,300,700);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700|Roboto+Condensed:400,700,300&subset=latin,cyrillic);
 $container-width: 1020px;
 $color0: #2B3740;
 $color1: #626F79;
@@ -12,8 +8,8 @@ $color4: #FFFFFF;
 $colorA: #2EAC69;
 $colorB: #F58410;
 $font1: 'Roboto Slab';
-$font2: 'Oswald';
-$font3: 'Raleway';
+$font2: 'Roboto Slab', sans-serif;
+$font3: 'Roboto Condensed', serif;
 $header-height: 70px;
 $aside-width: 260px;
 $book-search-height: 145px;
