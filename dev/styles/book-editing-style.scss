@@ -36,6 +36,14 @@ aside .ok {
             color: rgba(251, 250, 249, 1);
             cursor: pointer;
         }
+        #image {
+            display: none;
+            z-index: 1;
+            position: absolute;
+            width: 200px;
+            margin-left: 25px;
+            margin-top: 135px;
+        }
     }
     input,
     textarea {

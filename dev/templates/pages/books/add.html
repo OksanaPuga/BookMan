@@ -12,9 +12,10 @@
     <section class="main-content">
         <section id="book-editing">
 
-            <div class="cover-box">
-                <img ng-src="{{book.image}}" alt="book cover" class="cover">
-                <div class="change-cover-btn">add cover</div>
+            <div ng-click="toggleUrlBtn()" class="cover-box">
+                <input id="image" type="url" ng-model="book.image">
+                <img ng-src="{{book.image}}" alt="" class="cover">
+                <div class="change-cover-btn"><span>add cover</span></div>
             </div>
 
             <input type="text" placeholder="author" name="author" id="author" ng-model="book.author">

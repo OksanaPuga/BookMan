@@ -1,5 +1,5 @@
 angular.module('bookman')
-    .controller('BookEditController', ['$scope', '$routeParams', 'Book', 'Books', function ($scope, $routeParams, Book, Books) {
+    .controller('BookEditController', ['$scope', '$routeParams', 'Book', 'Books', 'Buttons', function ($scope, $routeParams, Book, Books, Buttons) {
 
         $scope.book = Books.getBookByID($routeParams.id);
 
@@ -27,5 +27,7 @@ angular.module('bookman')
             $scope.book.modified = new Date();
             new Book($scope.book).update();
         }
+        
+        $scope.toggleUrlBtn = Buttons.toggleUrlBtn;
 
     }]);

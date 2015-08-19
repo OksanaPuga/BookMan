@@ -3,7 +3,7 @@ $book-t-height: 320px;
 $book-m-height: 400px;
 
 //laptops & tablets
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1033px) {
 
     header .container {
         padding: 0 30px;
@@ -119,6 +119,10 @@ $book-m-height: 400px;
                 text-align: center;
                 padding: 70px 20px;
                 font-size: 24px;
+                transition: .2s;
+            }
+            .opened {
+                transform: translateY(220px);
             }
         }
         .book-instance:nth-child(2n) {
@@ -256,7 +260,6 @@ $book-m-height: 400px;
         }
         article {
             font-size: 18px;
-            border-top: 1px solid $color2;
             .btn-box {
                 display: none;
                 margin-top: 0;
@@ -443,8 +446,11 @@ $book-m-height: 400px;
             .more-info-box {
                 height: calc(#{$book-m-height} - 130px);
                 top: -380px;
-                padding: 135px 20px;
-                font-size: 42px;
+                padding: 80px 20px;
+                font-size: 28px;
+            }
+            .opened {
+                transform: translateY(380px);
             }
             .front {
                 top: -$book-m-height;

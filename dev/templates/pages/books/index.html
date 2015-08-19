@@ -2,7 +2,7 @@
     <modal-backdrop></modal-backdrop>
     <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <div class = "aside-scroll">
+            <div class="aside-scroll">
                 <main-nav></main-nav>
                 <book-search-section></book-search-section>
                 <statistics-section></statistics-section>
@@ -26,9 +26,9 @@
             </article>
 
             <article class="book-instance" ng-repeat="book in books | filter:typedFilter ">
-                <a ng-href="#/books/{{book.id}}/info">
+                <a href="#/books/{{book.id}}/info">
                     <div class="back">
-                        <div class="more-info-btn"></div>
+                        <div ng-click="showShortInfo($event)" class="more-info-btn"></div>
                         <p class="book-author">{{book.author}}</p>
                         <p class="book-name">{{book.title}}</p>
                         <p class="review" ng-show="book.review">Review</p>
@@ -39,14 +39,11 @@
                         </div>
                     </div>
                     <div class="front">
-                       <div class="more-info-box">
-                        <p class="review" ng-show="book.review">Review</p>
-                        <p class="quotes">Quotes: {{book.quotesAmount}}</p>
-                        <p class="notes">Notes: {{book.notesAmount}}</p>
-                        <div class="rate" ng-show="{{book.rate.length > 1}}">
-                            <img src="images/star.png" alt="" ng-repeat="star in book.rate">
+                        <div class="more-info-box">
+                            <p class="review" ng-show="book.review">Review</p>
+                            <p class="quotes">Quotes: {{book.quotesAmount}}</p>
+                            <p class="notes">Notes: {{book.notesAmount}}</p>
                         </div>
-                    </div>
                         <img ng-src="{{book.image}}" alt="Book cover">
                     </div>
                 </a>

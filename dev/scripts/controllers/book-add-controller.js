@@ -1,5 +1,5 @@
 angular.module('bookman')
-    .controller('BookAddController', ['$scope', 'Book', 'Books', function ($scope, Book, Books) {
+    .controller('BookAddController', ['$scope', 'Book', 'Books', 'Buttons', function ($scope, Book, Books, Buttons) {
 
         $scope.generateId = function () {
             var randomId = '';
@@ -20,5 +20,7 @@ angular.module('bookman')
             $scope.book.id = $scope.generateId();
             new Book($scope.book).save();
         }
+
+        $scope.toggleUrlBtn = Buttons.toggleUrlBtn;
 
     }]);

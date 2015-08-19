@@ -159,6 +159,9 @@
         font-family: $font1;
         font-size: 15px;
     }
+    article:last-child {
+        border-bottom: none;
+    }
 }
 .widget-label.quotes-in-book {
     margin-top: 58px;
