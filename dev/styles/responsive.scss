@@ -25,7 +25,7 @@
 			display: block;
 			border:0;
 			background:none;
-			float: right;
+			float: left;
 			overflow: hidden;
 			text-indent: -9999px;
 			width: 50px;
@@ -36,7 +36,8 @@
 			background-size: 100px 41px;
 			background-position: 0 0;
 		}
-		.btn-menu.active{background-position: -50px 0;}
+        //it stucks in orange color...
+		//.btn-menu.active{background-position: -50px 0;}
 
 		.top-nav{
 			display:none;
@@ -44,9 +45,6 @@
 	}
 
 	.content {
-		.main-content{
-			padding-left:0;
-		}
 		.wrap-aside{
 			background: $color0;
 			position: fixed;

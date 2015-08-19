@@ -74,7 +74,7 @@
     }
     article {
         transition: $buttons-transition-time;
-        border-top: 1px solid $color2;
+        border-bottom: 1px solid $color2;
         .item-body {
             padding: 15px 10px;
         }
@@ -113,31 +113,24 @@
     }
     article.review {
         clear: both;
-        border-top: 3px solid $color2;
-        border-bottom: 3px solid $color2;
+        border-bottom: 1px solid $color2;
         .item-body {
-            padding: 0 23px 20px 28px;
+            padding: 0 20px 20px 20px;
         }
         p {
             padding: 5px 0;
-            font-family: $font3;
-            font-size: 17px;
+            font-family: $font1;
+            font-size: 18px;
         }
         p:first-child {
             color: $color2;
             margin: 10px 0;
-            padding-bottom: 10px;
             font-weight: bold;
-            font-size: 22px;
+            font-size: 20px;
             text-align: center;
-            font-family: $font2;
-            border-bottom: 1px solid $color2;
+            font-family: $font1;
             transition: $buttons-transition-time;
         }
-    }
-    article.review:hover p:first-child {
-        color: $color1;
-        border-bottom: 1px solid $color1;
     }
     article.quote {
         font-weight: bolder;
@@ -160,7 +153,10 @@
         }
     }
     article.note {
-        font-family: $font3;
+        .item-body {
+            padding-left: 20px;
+        }
+        font-family: $font1;
         font-size: 15px;
     }
 }
