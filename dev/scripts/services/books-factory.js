@@ -13,7 +13,7 @@ angular.module('bookman').factory('Books', function BooksFactory($http, Book) {
                     author: elm.volumeInfo.authors,
                     publisher: elm.volumeInfo.publisher,
                     publicationDate: elm.volumeInfo.publishedDate,
-                    image: elm.volumeInfo.imageLinks.thumbnail,
+                    image: elm.volumeInfo.imageLinks ? elm.volumeInfo.imageLinks.thumbnail : factory.defaultcover,
                     category: elm.volumeInfo.categories,
                     length: elm.volumeInfo.pageCount,
                     description: elm.volumeInfo.description
