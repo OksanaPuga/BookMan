@@ -14,10 +14,12 @@
 	  left: 0;
 	  z-index: 999;
 	  background-color: #fff;
-	  opacity: 0.5
+	  opacity: 0.5;
+	  display:none;
+	  cursor:pointer;
 	}
 	.modal-backdrop.active {
-		display: none;
+		display: block;
 	}
 	body>header{
 		z-index: 1000;
@@ -46,6 +48,7 @@
 
 	.content {
 		.wrap-aside{
+			display:none;
 			background: $color0;
 			position: fixed;
 			z-index: 1000;
@@ -68,7 +71,7 @@
       		}
 		}
 		.wrap-aside.active{
-			display: none;
+			display: block;
 		}
 
 		aside{

@@ -4,9 +4,9 @@ angular.module('bookman')
             restrict: 'E',
             templateUrl: 'templates/directives/modal-backdrop.html',
             link: function(scope, element, attrs) {               
-                $rootscope.isActiveAside = false;
+                $rootscope.isActiveAside = true;
                 scope.closeAside = function() {
-                    $rootscope.isActiveAside = true;
+                    $rootscope.isActiveAside = false;
                 }  
             }
         }
