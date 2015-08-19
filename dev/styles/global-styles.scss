@@ -6,13 +6,26 @@ body {
 p {
     margin: 0;
 }
-ul{
+ul, h1, h3{
     margin:0;
     padding:0;
+    list-style: none;
 }
 a {
     text-decoration: none;
 }
+h1{
+      font-family: "Roboto Slab";
+      font-size: 30px;
+      margin-bottom: 20px;
+}
+h3{
+      font-family: "Roboto Slab";
+      font-size: 30px;
+      margin-bottom: 10px;
+}
+
+
 // to prevent unexpected outlines in chrome
 *:focus {
     outline: 0;
