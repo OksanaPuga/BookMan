@@ -1,8 +1,10 @@
 angular.module('bookman').controller('SearchController', ['$scope', '$http', 'Books', 'Book', function ($scope, $http, Books, Book) {
+	$scope.books = Books.getAllBooks();
 	$scope.submitSearch = function (form) {
 		if (form.$valid) {
 			var url;
 			$scope.tempBooks = [];
+			$scope.indicesAdded = [];
 			
 			if ($scope.searchParam.byTerm == "all"){
 				url = "https://www.googleapis.com/books/v1/volumes?q="+$scope.searchParam.text+"&maxResults=20";
@@ -32,7 +34,7 @@ angular.module('bookman').controller('SearchController', ['$scope', '$http', 'Bo
 						$scope.tempBooks.push(obj);
 					}
 					$scope.addBook = function(index, book) {
-						$scope.tempBooks[index].isAdded = true;
+						$scope.tempBooks[index].isAdded = true;  				
 						var newBook = new Book(book);
 						newBook.save();
 						$scope.books = Books.getAllBooks();
