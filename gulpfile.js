@@ -12,9 +12,7 @@ var gulp = require('gulp'),
 gulp.task('scripts', function () {
     return gulp.src('dev/scripts/**/*.js')
         .pipe(sourcemaps.init())
-        .pipe(concat('app.js'))
-        //.pipe(concat('app.min.js'))
-        //.pipe(uglify())    
+        .pipe(concat('app.js'))   
         .pipe(sourcemaps.write({
             includeContent: true,
             sourceRoot: '/scripts'

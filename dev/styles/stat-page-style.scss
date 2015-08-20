@@ -1,9 +1,11 @@
+
 // left side
 .message-books-img {
     float: left;
     height: 100%;
     width: 100%;
-    padding-right: 60px;
+    padding-right: 7px;
+    padding-left: 40px;
 }
 .message {
     color: $color3;
@@ -34,7 +36,7 @@
     padding-left: 7px;
     position: relative;
     .comparison {
-        float: left;
+        float: right;
         width: 40%;
         height: 60%;
         margin-top: 2%;
@@ -64,7 +66,7 @@
 
     .books {
         float: left;
-        width: 60%;
+        width: 40%;
     }
     
     .book {
@@ -106,13 +108,15 @@
     width: 100%;
     background: $color3;
     color: $color0;
-    padding: 20px 30px;
+    padding: 20px 30px 40px;
     font-family: $font3;
     border-radius: 3px;
     .title {
         font-family: $font2;
         color: $color1;
         font-weight: bold;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
         border-bottom: 3px solid $color1;
         text-align: center;
     }
