@@ -1,1 +1,1 @@
-<div class="widget-label random-quote" ng-show=book.quotesAmount> <span class=accent>Random quote:</span> <p>"{{quoteCtrl.randomQuote}}"</p> </div> 
+<div class="widget-label random-quote" ng-show=book.quotesAmount> <span class=accent>Random quote:</span> <p>"{{quoteCtrl.randomQuote | limitTo:500}}"<span ng-hide="quoteCtrl.randomQuote < 500">...</span></p> </div> 

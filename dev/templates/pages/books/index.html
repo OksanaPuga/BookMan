@@ -28,7 +28,7 @@
             <article class="book-instance" ng-repeat="book in books | filter:typedFilter ">
                 <a href="#/books/{{book.id}}/info">
                     <div class="back">
-                        <div ng-click="showShortInfo($event)" class="more-info-btn"></div>
+                        <div ng-click="showShortInfo($event)" class="more-info-btn"><img src="images/info-48.png"></div>
                         <p class="book-author">{{book.author | limitTo:20}}<span ng-hide="book.author.length < 20">...</span></p>
                         <p class="book-name">{{book.title | limitTo:25}}<span ng-hide="book.title.length < 25">...</span></p>
                         <p class="review" ng-show="book.review">Review</p>

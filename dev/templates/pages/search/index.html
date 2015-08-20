@@ -44,8 +44,8 @@
                         <p class="book-author">{{book.author | limitTo:20}}<span ng-hide="book.author.length < 20">...</span></p>
                         <p class="book-name">{{book.title | limitTo:25}}<span ng-hide="book.title.length < 25">...</span></p>
 
-                        <button ng-hide="book.isAdded" class="btn-add btn positive" ng-click="addBook($index, book)"><span>Add this book</span></button>
-                        <span ng-show="book.isAdded" class="icon-added">Added</span>
+                        <button ng-hide="book.isAdded" class="btn-add btn positive" ng-click="addBook($index, book)"><span>Add this book</span><img src="images/plus-4-48.png"></button>
+                        <span ng-show="book.isAdded" class="icon-added"><span>Added</span><img src="images/checkmark-48.png"></span>
                     </div>
                     <div class="front">
                         <img ng-src="{{book.image}}" alt="Book cover">
