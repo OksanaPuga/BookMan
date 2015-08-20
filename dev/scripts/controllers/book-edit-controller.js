@@ -13,6 +13,13 @@ angular.module('bookman')
         }
 
         $scope.saveChanges = function () {
+            
+            if (!$scope.editedBookInfo.title
+                || $scope.editedBookInfo.length < 0
+                || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate > 5) 
+                || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate < 1)) {
+                return;
+            }
 
             if ($scope.editedBookInfo.rate) {
                 $scope.editedBookInfo.rate = ['1 star', '2 stars', '3 stars', '4 stars', '5 stars'].slice(0, $scope.editedBookInfo.rate);
