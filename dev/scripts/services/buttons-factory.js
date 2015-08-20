@@ -29,7 +29,6 @@ angular.module('bookman')
                 
                 $box.toggleClass('opened');
                 $book.on('focusout', function () {
-                    console.log('jeoewojewoewoewiowrio');
                     $box.removeClass('opened');
                 });
             }

@@ -5,7 +5,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
         this.id = obj.id;
         this.title = obj.title || null;
         this.author = angular.isArray(obj.author) ? obj.author.join(', ') : obj.author || null;
-        this.image = obj.image || null;
+        this.image = obj.image || 'images/Book.jpg';
         this.category = angular.isArray(obj.category) ? obj.category.join(', ') : obj.category || null;
         this.publisher = obj.publisher || null;
         this.publicationDate = obj.publicationDate || null;
