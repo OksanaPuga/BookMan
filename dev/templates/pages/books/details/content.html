@@ -1,20 +1,15 @@
-
 <div class="container">
     <modal-backdrop></modal-backdrop>
     <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <div class = "aside-scroll">
-                <main-nav></main-nav>
-                <edit-delete-btn></edit-delete-btn>
+			<main-nav></main-nav>
+			<edit-delete-btn></edit-delete-btn>
 
-                <added-modified></added-modified>
+			<added-modified></added-modified>
 
-                <random-quote></random-quote>
-            </div>
+			<random-quote></random-quote>
         </aside>
     </div>
-
-
     <section class="main-content tablet mobile">
         <section id="book-details" class="tablet mobile">
 
@@ -23,7 +18,6 @@
             <section id="book-content" class="tablet mobile" ng-show="isCurrent('cont')">
                 <p class="no-content-message">Here will be content of the book. Coming soon...</p>
             </section>
-
         </section>
     </section>
 </div>

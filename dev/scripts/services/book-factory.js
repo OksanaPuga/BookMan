@@ -1,6 +1,6 @@
 angular.module('bookman').factory('Book', function BookFactory() {
 
-    var BookFactory = function (obj) {
+    var BookFactory = function(obj) {
 
         this.id = obj.id;
         this.title = obj.title || null;
@@ -26,7 +26,7 @@ angular.module('bookman').factory('Book', function BookFactory() {
 
     var currentBooks = [];
 
-    BookFactory.prototype.save = function () {
+    BookFactory.prototype.save = function() {
         if (localStorage.getItem('books')) {
             currentBooks = angular.fromJson(localStorage.getItem('books'));
         }
@@ -34,16 +34,16 @@ angular.module('bookman').factory('Book', function BookFactory() {
         localStorage.setItem('books', angular.toJson(currentBooks));
     };
 
-    BookFactory.prototype.update = function () {
+    BookFactory.prototype.update = function() {
         var that = this,
             isNew = true;
         if (!localStorage.getItem('books')) {
             that.save();
         } else {
             currentBooks = angular.fromJson(localStorage.getItem('books'));
-            angular.forEach(currentBooks, function (obj, index) {
+            angular.forEach(currentBooks, function(obj, index) {
                 if (obj.id == that.id) {
-                    angular.forEach(that, function (value, property) {
+                    angular.forEach(that, function(value, property) {
                         obj[property] = value;
                     });
                     localStorage.setItem('books', angular.toJson(currentBooks));
@@ -56,15 +56,15 @@ angular.module('bookman').factory('Book', function BookFactory() {
         }
     };
 
-    BookFactory.prototype.delete = function () {
+    BookFactory.prototype.delete = function() {
         var that = this,
             currentBooks = angular.fromJson(localStorage.getItem('books'));
-            angular.forEach(currentBooks, function (obj, index) {
-                if (obj.id == that.id) {
-                    currentBooks.splice(index, 1); 
-                    localStorage.setItem('books', angular.toJson(currentBooks));
-                }
-            });
+        angular.forEach(currentBooks, function(obj, index) {
+            if (obj.id == that.id) {
+                currentBooks.splice(index, 1);
+                localStorage.setItem('books', angular.toJson(currentBooks));
+            }
+        });
     };
 
     return BookFactory;

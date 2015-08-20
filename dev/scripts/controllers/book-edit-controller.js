@@ -1,5 +1,5 @@
 angular.module('bookman')
-    .controller('BookEditController', ['$scope', '$routeParams', 'Book', 'Books', 'Buttons', function ($scope, $routeParams, Book, Books, Buttons) {
+    .controller('BookEditController', ['$scope', '$routeParams', 'Book', 'Books', 'Buttons', function($scope, $routeParams, Book, Books, Buttons) {
 
         $scope.book = Books.getBookByID($routeParams.id);
 
@@ -12,12 +12,9 @@ angular.module('bookman')
             $scope.editedBookInfo.rate = $scope.editedBookInfo.rate.length;
         }
 
-        $scope.saveChanges = function () {
-            
-            if (!$scope.editedBookInfo.title
-                || $scope.editedBookInfo.length < 0
-                || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate > 5) 
-                || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate < 1)) {
+        $scope.saveChanges = function() {
+
+            if (!$scope.editedBookInfo.title || $scope.editedBookInfo.length < 0 || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate > 5) || ($scope.editedBookInfo.rate && $scope.editedBookInfo.rate < 1)) {
                 return;
             }
 
@@ -34,7 +31,7 @@ angular.module('bookman')
             $scope.book.modified = new Date();
             new Book($scope.book).update();
         }
-        
+
         $scope.toggleUrlBtn = Buttons.toggleUrlBtn;
 
     }]);

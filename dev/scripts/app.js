@@ -1,4 +1,4 @@
-angular.module('bookman', ['ngRoute']).config(['$routeProvider', function ($routeProvider) {
+angular.module('bookman', ['ngRoute']).config(['$routeProvider', function($routeProvider) {
     $routeProvider
         .when('/', {
             redirectTo: '/books'

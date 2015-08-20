@@ -1,23 +1,19 @@
 <div class="container">
     <modal-backdrop></modal-backdrop>
     <div class="wrap-aside" ng-class="{ active: isActiveAside}">
-        <aside>
-            <div class = "aside-scroll">
-                <main-nav></main-nav>
-                <add-cancel-btn></add-cancel-btn>
-            </div>
+        <aside>         
+			<main-nav></main-nav>
+			<add-cancel-btn></add-cancel-btn>          
         </aside>
     </div>
-
     <section class="main-content">
         <section id="book-editing">
-
             <div ng-click="toggleUrlBtn()" class="cover-box">
                 <input id="image" type="url" ng-model="book.image">
                 <img ng-src="{{book.image}}" alt="" class="cover">
                 <div class="change-cover-btn"><span>add cover</span></div>
             </div>
-
+			
             <input type="text" placeholder="author" name="author" id="author" ng-model="book.author">
             <input type="text" placeholder="title" name="title" id="title" required ng-model="book.title">
             <input type="text" placeholder="genre" name="genre" id="genre" ng-model="book.category">

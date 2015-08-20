@@ -1,9 +1,9 @@
 angular.module('bookman')
-    .directive('bookSearchSection', function () {
+	.directive('bookSearchSection', function() {
 
-        return {
-            restrict: 'E',
-            templateUrl: 'templates/directives/book-search-section.html',
-        }
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/directives/book-search-section.html',
+		}
 
-    });
+	});

@@ -2,18 +2,13 @@
     <modal-backdrop></modal-backdrop>
     <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <div class="aside-scroll">
-                <main-nav></main-nav>
-                <book-search-section></book-search-section>
-                <statistics-section></statistics-section>
-            </div>
+			<main-nav></main-nav>
+			<book-search-section></book-search-section>
+			<statistics-section></statistics-section>         
         </aside>
     </div>
-
-
     <section class="main-content tablet mobile">
         <section id="book-list" class="tablet mobile">
-
             <article class="new-book-btn">
                 <div class="back">
                     <a ng-href="#/add" class="manually-btn btn positive">manually</a>
@@ -24,7 +19,6 @@
                     <p>add new</p>
                 </div>
             </article>
-
             <article class="book-instance" ng-repeat="book in books | filter:typedFilter ">
                 <a href="#/books/{{book.id}}/info">
                     <div class="back">
@@ -45,7 +39,6 @@
                     </div>
                 </a>
             </article>
-
         </section>
     </section>
 </div>

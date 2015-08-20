@@ -1,10 +1,10 @@
 angular.module('bookman')
-    .directive('detailsFlags', function () {
+    .directive('detailsFlags', function() {
 
         return {
             restrict: 'A',
             templateUrl: 'templates/directives/details-flags.html',
-            controller: function ($routeParams) {
+            controller: function($routeParams) {
                 return {
                     infoUrl: '#/books/' + $routeParams.id + '/info',
                     contentUrl: '#/books/' + $routeParams.id + '/content',

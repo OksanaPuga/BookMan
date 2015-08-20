@@ -1,5 +1,5 @@
 angular.module('bookman')
-    .controller('BookAbstractController', ['$scope', '$routeParams', 'Book', 'Books', function ($scope, $routeParams, Book, Books) {
+    .controller('BookAbstractController', ['$scope', '$routeParams', 'Book', 'Books', function($scope, $routeParams, Book, Books) {
 
         $scope.book = Books.getBookByID($routeParams.id);
         $scope.currentTab = 'abstr';
@@ -16,26 +16,26 @@ angular.module('bookman')
             index: null
         };
 
-        $scope.isCurrent = function (tab) {
+        $scope.isCurrent = function(tab) {
             return $scope.currentTab === tab;
         };
 
 
-        $scope.increaseNotesAmount = function () {
+        $scope.increaseNotesAmount = function() {
             $scope.book.notesAmount++;
         };
-        $scope.increaseQuotesAmount = function () {
+        $scope.increaseQuotesAmount = function() {
             $scope.book.quotesAmount++;
         };
-        $scope.decreaseNotesAmount = function () {
+        $scope.decreaseNotesAmount = function() {
             $scope.book.notesAmount--;
         };
-        $scope.decreaseQuotesAmount = function () {
+        $scope.decreaseQuotesAmount = function() {
             $scope.book.quotesAmount--;
         }
 
 
-        $scope.showAllAbstract = function () {
+        $scope.showAllAbstract = function() {
             $scope.typesToShow = {
                 quotes: true,
                 notes: true,
@@ -43,9 +43,8 @@ angular.module('bookman')
             }
         };
 
-        $scope.toggleButtons = function ($event) {
+        $scope.toggleButtons = function($event) {
             var target = $event.currentTarget;
-            console.log(target);
 
             if (!$(target).hasClass('opened')) {
                 $('article').removeClass('opened');
@@ -54,13 +53,13 @@ angular.module('bookman')
         };
 
 
-        $scope.updateBookAbstr = function () {
+        $scope.updateBookAbstr = function() {
             $scope.book.modified = new Date();
             var currentbook = new Book($scope.book);
             currentbook.update();
         };
 
-        $scope.addAbstrItem = function () {
+        $scope.addAbstrItem = function() {
 
             var editedItem = $scope.abstrItemToAdd,
                 currentItem = $scope.book.abstractItems[$scope.abstrItemToAdd.index];
@@ -107,18 +106,18 @@ angular.module('bookman')
             }
         };
 
-        $scope.editAbstrItem = function ($index) {
+        $scope.editAbstrItem = function($index) {
             $scope.abstrItemToAdd.type = $scope.book.abstractItems[$index].type;
             $scope.abstrItemToAdd.content = $scope.book.abstractItems[$index].content;
             $scope.abstrItemToAdd.index = $index;
-            
-            window.scrollTo(0,0);
+
+            window.scrollTo(0, 0);
             $('textarea').focus();
 
             $scope.updateBookAbstr();
         };
 
-        $scope.deleteAbstrItem = function ($index) {
+        $scope.deleteAbstrItem = function($index) {
             if ($scope.book.abstractItems[$index].type === 'quote') {
                 $scope.decreaseQuotesAmount();
             } else if ($scope.book.abstractItems[$index].type === 'note') {
@@ -129,18 +128,18 @@ angular.module('bookman')
             $scope.updateBookAbstr();
         };
 
-        $scope.editReview = function () {
+        $scope.editReview = function() {
             $scope.abstrItemToAdd.type = 'review';
             $scope.abstrItemToAdd.content = $scope.book.review;
-            
-            window.scrollTo(0,0);
+
+            window.scrollTo(0, 0);
             $('textarea').focus();
 
             $scope.updateBookAbstr();
         };
 
-        $scope.deleteReview = function () {
+        $scope.deleteReview = function() {
             $scope.book.review = null;
             $scope.updateBookAbstr();
         };
-}]);
+    }]);

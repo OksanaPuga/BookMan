@@ -1,9 +1,9 @@
 angular.module('bookman')
-    .directive('quickStatistics', function () {
+	.directive('quickStatistics', function() {
 
-        return {
-            restrict: 'E',
-            templateUrl: 'templates/directives/quick-statistics.html',
-        }
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/directives/quick-statistics.html',
+		}
 
-    });
+	});

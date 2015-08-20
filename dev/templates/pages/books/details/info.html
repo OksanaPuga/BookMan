@@ -2,22 +2,15 @@
     <modal-backdrop></modal-backdrop>
     <div class="wrap-aside" ng-class="{ active: isActiveAside}">
         <aside>
-            <div class = "aside-scroll">
-                <main-nav></main-nav>
-                <edit-delete-btn></edit-delete-btn>
-
-                <added-modified></added-modified>
-
-                <random-quote></random-quote>
-            </div>
+			<main-nav></main-nav>
+			<edit-delete-btn></edit-delete-btn>
+			<added-modified></added-modified>
+			<random-quote></random-quote>         
         </aside>
     </div>
-
     <section class="main-content tablet mobile">
         <section id="book-details" class="tablet mobile">
-
             <div details-flags></div>
-
             <section id="book-info" class="no-overflow tablet mobile" ng-show="isCurrent('info')">
                 <div class="cover-wrap"><img class="cover" ng-src="{{book.image}}" alt="book cover"></div>
                 <div class="info-categories">
@@ -33,7 +26,6 @@
                 </div>
                 <p class="description" ng-show="book.description"><span class="category">Description:</span>{{book.description}}</p>
             </section>
-
         </section>
     </section>
 </div>

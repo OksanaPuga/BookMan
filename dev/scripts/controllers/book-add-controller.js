@@ -1,7 +1,7 @@
 angular.module('bookman')
-    .controller('BookAddController', ['$scope', 'Book', 'Books', 'Buttons', function ($scope, Book, Books, Buttons) {
+    .controller('BookAddController', ['$scope', 'Book', 'Books', 'Buttons', function($scope, Book, Books, Buttons) {
 
-        $scope.generateId = function () {
+        $scope.generateId = function() {
             var randomId = '';
             for (var i = 0; i < 12; i++) {
                 randomId += Math.ceil(Math.random() * 9);
@@ -11,14 +11,11 @@ angular.module('bookman')
 
         $scope.book = {};
 
-        $scope.addBook = function () {
-            if (!$scope.book.title
-                || $scope.book.length < 0
-                || ($scope.book.rate && $scope.book.rate > 5) 
-                || ($scope.book.rate && $scope.book.rate < 1)) {
+        $scope.addBook = function() {
+            if (!$scope.book.title || $scope.book.length < 0 || ($scope.book.rate && $scope.book.rate > 5) || ($scope.book.rate && $scope.book.rate < 1)) {
                 return;
-            } 
-            
+            }
+
             if ($scope.book.rate) {
                 $scope.book.rate = ['1 star', '2 stars', '3 stars', '4 stars', '5 stars'].slice(0, $scope.book.rate);
                 // for iterating rate-stars

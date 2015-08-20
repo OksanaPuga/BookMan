@@ -1,4 +1,4 @@
-angular.module('bookman').controller('StatisticsController', ['$scope', 'Books', 'Book', function ($scope, Books, Book) {
+angular.module('bookman').controller('StatisticsController', ['$scope', 'Books', 'Book', function($scope, Books, Book) {
 	var books = Books.getAllBooks(),
 		sumQuotes = 0,
 		sumNotes = 0,
@@ -9,47 +9,47 @@ angular.module('bookman').controller('StatisticsController', ['$scope', 'Books',
 		avarageQuotes,
 		avarageNotes;
 
- 	function getRandom(min,max){
-	 	return Math.floor(Math.random() * (max - min + 1)) + min;
+	function getRandom(min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
 
-	angular.forEach(books, function (obj) {
+	angular.forEach(books, function(obj) {
 		if (obj.quotesAmount) {
 			sumBooksQuotes++;
 			sumQuotes += obj.quotesAmount;
 		}
-		
+
 		if (obj.notesAmount) {
 			sumBooksNotes++;
 			sumNotes += obj.notesAmount;
 		}
 
-		if (obj.review){
+		if (obj.review) {
 			sumReview++;
 		}
 
-		if(obj.length){
+		if (obj.length) {
 			amountPages += obj.length;
-		}	
+		}
 		obj.style = {
-			width : getRandom(80, 90),
-		 	left: getRandom(-5, 10),
-		 	height: getRandom(20, 50),
+			width: getRandom(80, 90),
+			left: getRandom(-5, 10),
+			height: getRandom(20, 50),
 		}
 	});
 
-	avarageQuotes = parseInt( sumQuotes / books.length);
-	avarageNotes = parseInt( sumNotes / books.length);
+	avarageQuotes = parseInt(sumQuotes / books.length);
+	avarageNotes = parseInt(sumNotes / books.length);
 
 	$scope.statistics = {
 		amountBooks: books.length,
 		avarageNotes: avarageNotes,
 		sumBooksNotes: sumBooksNotes,
-		avarageQuotes: avarageQuotes,		
+		avarageQuotes: avarageQuotes,
 		sumBooksQuotes: sumBooksQuotes,
 		quotesAmountAll: sumQuotes,
 		notesAmountAll: sumNotes,
-		reviewAmountAll: sumReview	
+		reviewAmountAll: sumReview
 	};
 	$scope.books = books;
 
